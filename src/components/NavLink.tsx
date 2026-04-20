@@ -16,7 +16,7 @@ function isExternalHref(href: string) {
 export function NavLink({ href, children, openInNewTab, className = "" }: NavLinkProps) {
   const external = openInNewTab || isExternalHref(href);
   const baseClass =
-    "text-sm text-secondary transition-colors duration-200 hover:text-foreground";
+    "text-sm font-medium text-secondary transition-colors duration-200 hover:text-foreground";
 
   if (external) {
     return (

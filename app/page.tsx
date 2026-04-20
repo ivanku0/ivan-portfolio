@@ -17,10 +17,10 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <section aria-label="Intro" className="relative z-20 space-y-7 md:space-y-8">
             <p className="text-muted text-xs uppercase tracking-[0.22em] md:text-sm">
-              Ivan Kuo
+              hi, i'm ivan!
             </p>
             <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.02em] md:text-6xl">
-              Designing AI systems grounded in human judgment, taste, and
+              I design AI systems grounded in human judgment, taste, and
               real-world use.
             </h1>
             <p className="text-secondary max-w-3xl text-lg leading-8 md:text-xl md:leading-9">
@@ -48,8 +48,7 @@ export default function Home() {
                   Selected Work
                 </h2>
                 <p className="text-secondary max-w-3xl text-base leading-8">
-                  Selected projects exploring how AI systems can be structured,
-                  made predictable, and applied to real production work.
+                  Selected projects exploring how AI systems can be structured,made predictable, and applied to real production work.
                 </p>
               </div>
 

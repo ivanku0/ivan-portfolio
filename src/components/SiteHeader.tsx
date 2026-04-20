@@ -20,13 +20,21 @@ const NAV_ITEMS: NavItem[] = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 bg-[rgb(var(--color-page-bg-rgb)_/_0.58)] backdrop-blur-xl supports-[backdrop-filter]:bg-[rgb(var(--color-page-bg-rgb)_/_0.34)]">
+    <header className="sticky top-0 z-50 bg-[rgb(var(--color-page-bg-rgb)_/_0.48)] backdrop-blur-md supports-[backdrop-filter]:bg-[rgb(var(--color-page-bg-rgb)_/_0.2)]">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-4 md:py-5">
         <Link
           href="/"
-          className="text-sm font-medium tracking-tight text-foreground transition-colors duration-200 hover:text-secondary"
+          className="inline-flex items-center gap-2 text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:text-secondary"
         >
-          Ivan Kuo
+          <img
+            src="/favicon.ico"
+            alt=""
+            width={16}
+            height={16}
+            className="size-4 shrink-0 rounded-[3px] opacity-[0.72]"
+            aria-hidden
+          />
+          ivankuo.com
         </Link>
         <nav aria-label="Primary">
           <ul className="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 sm:gap-x-7">
