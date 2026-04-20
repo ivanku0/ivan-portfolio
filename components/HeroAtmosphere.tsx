@@ -28,7 +28,6 @@ type CursorBlink = {
 const SYMBOLS = [".", ":", "|", "/", "\\", "_", "+", "*", "[", "]", "{", "}", "<", ">"];
 const FRAGMENTS = ["::", "...", "[]>", "_|_", "//", "++", "<>"];
 const ANOMALY_GLYPHS = ["o_O", ">_<", "|_|", ":|:", "<_>", ".-.", "<:>", "[::]", "<||>"];
-const COLORS = ["168, 156, 172", "183, 163, 255", "101, 88, 104"];
 
 export function HeroAtmosphere() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -51,6 +50,13 @@ export function HeroAtmosphere() {
     let animationFrame = 0;
     let particles: Particle[] = [];
     let cursors: CursorBlink[] = [];
+    const style = getComputedStyle(document.documentElement);
+    const colors = [
+      style.getPropertyValue("--color-muted-rgb").trim() || "168, 156, 172",
+      style.getPropertyValue("--color-accent-secondary-rgb").trim() || "183, 163, 255",
+      style.getPropertyValue("--color-border-subtle-rgb").trim() || "101, 88, 104",
+    ];
+    const pageBgRgb = style.getPropertyValue("--color-page-bg-rgb").trim() || "28, 13, 38";
 
     const randomGlyph = () =>
       Math.random() < 0.8
@@ -96,7 +102,7 @@ export function HeroAtmosphere() {
         phase: Math.random() * Math.PI * 2,
         pulse: 0.001 + Math.random() * 0.0018,
         glyph: randomGlyph(),
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        color: colors[Math.floor(Math.random() * colors.length)],
         isAnomaly: false,
       }));
 
@@ -168,9 +174,9 @@ export function HeroAtmosphere() {
         height * 0.42,
         Math.max(width, height) * 0.7,
       );
-      bg.addColorStop(0, "rgba(183, 163, 255, 0.11)");
-      bg.addColorStop(0.42, "rgba(168, 156, 172, 0.065)");
-      bg.addColorStop(1, "rgba(28, 13, 38, 0)");
+      bg.addColorStop(0, `rgba(${colors[1]}, 0.11)`);
+      bg.addColorStop(0.42, `rgba(${colors[0]}, 0.065)`);
+      bg.addColorStop(1, `rgba(${pageBgRgb}, 0)`);
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, width, height);
 
@@ -223,7 +229,7 @@ export function HeroAtmosphere() {
       cursors.forEach((cursor) => {
         const blink = Math.sin(time * cursor.speed + cursor.phase);
         if (blink > 0.22) {
-          ctx.fillStyle = "rgba(183, 163, 255, 0.3)";
+          ctx.fillStyle = `rgba(${colors[1]}, 0.3)`;
           ctx.fillRect(cursor.x, cursor.y, 2, cursor.size);
         }
       });

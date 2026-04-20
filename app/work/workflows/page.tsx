@@ -29,6 +29,7 @@ export default function WorkflowsPage() {
     <CaseStudyTemplate
       title="AI Workflows"
       subtitle="A case study on designing AI-supported workflows that help teams move faster while preserving quality, accountability, and human judgment in production environments."
+      hook="AI workflows fail when users cannot predict what will happen before they run."
       overview={overview}
       overviewVisual="Original workflow model"
       challenge={challenge}

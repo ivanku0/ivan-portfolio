@@ -12,7 +12,7 @@ export default function Home() {
         <HeroAtmosphere />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(90%_90%_at_34%_38%,rgba(28,13,38,0.46)_0%,rgba(28,13,38,0.22)_45%,rgba(28,13,38,0)_75%)]"
+          className="hero-readability-overlay pointer-events-none absolute inset-0 z-10"
         />
         <div className="mx-auto max-w-6xl">
           <section aria-label="Intro" className="relative z-20 space-y-7 md:space-y-8">
@@ -33,18 +33,25 @@ export default function Home() {
       </header>
 
       <main className="px-6 pb-36 md:pb-44">
-        <div className="mx-auto max-w-6xl space-y-28 md:space-y-40">
+        <div className="mx-auto max-w-6xl space-y-32 md:space-y-48">
           <RevealOnScroll>
             <section
               id="selected-work"
               aria-labelledby="selected-work-heading"
-              className="space-y-12 pt-20 md:space-y-14 md:pt-28"
+              className="space-y-14 pt-24 md:space-y-16 md:pt-34"
             >
-              <SectionHeading
-                id="selected-work-heading"
-                title="Selected Work"
-                description="Placeholder for case studies and outcomes. This section will highlight a few projects with context, process, and impact."
-              />
+              <div className="space-y-5">
+                <h2
+                  id="selected-work-heading"
+                  className="text-2xl font-semibold tracking-tight md:text-3xl"
+                >
+                  Selected Work
+                </h2>
+                <p className="text-secondary max-w-3xl text-base leading-8">
+                  Placeholder for case studies and outcomes. This section will
+                  highlight a few projects with context, process, and impact.
+                </p>
+              </div>
 
               <div className="grid gap-5 md:grid-cols-2 md:gap-6">
                 {caseStudies.map((caseStudy) => (
@@ -58,7 +65,7 @@ export default function Home() {
             <section
               id="how-i-think"
               aria-labelledby="how-i-think-heading"
-              className="section-divider space-y-6 border-t pt-18 md:pt-24"
+              className="section-divider space-y-6 border-t pt-22 md:pt-30"
             >
               <SectionHeading
                 id="how-i-think-heading"

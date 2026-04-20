@@ -14,6 +14,7 @@ type VisualConfig = {
 type CaseStudyTemplateProps = {
   title: string;
   subtitle: string;
+  hook?: string;
   overview: string | string[];
   challenge: string | string[];
   approach: string | string[];
@@ -27,6 +28,7 @@ type CaseStudyTemplateProps = {
 export function CaseStudyTemplate({
   title,
   subtitle,
+  hook,
   overview,
   challenge,
   approach,
@@ -85,29 +87,29 @@ export function CaseStudyTemplate({
     <div
       className={
         variant === "split"
-          ? "grid max-w-[68ch] gap-6 rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-surface-alt)]/80 p-6 shadow-lg shadow-black/25 md:grid-cols-2 md:gap-8 md:p-8"
+          ? "grid max-w-[82ch] gap-6 md:grid-cols-2 md:gap-8"
           : variant === "large"
-            ? "max-w-[82ch] rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-surface-alt)]/80 p-6 shadow-lg shadow-black/25 md:p-8"
-            : "max-w-[68ch] rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-surface-alt)]/80 p-6 shadow-lg shadow-black/25 md:p-8"
+            ? "max-w-[82ch] space-y-6 md:space-y-7"
+            : "max-w-[82ch] space-y-6 md:space-y-7"
       }
     >
       {variant === "split" ? (
         <>
-          <div>
+          <div className="space-y-4">
             <p className="text-muted text-[11px] uppercase tracking-[0.16em]">{label}</p>
             {text ? (
-              <p className="text-secondary mt-4 max-w-[32ch] text-sm leading-7 md:text-base md:leading-8">
+              <p className="text-secondary max-w-[32ch] text-sm leading-7 md:text-base md:leading-8">
                 {text}
               </p>
             ) : null}
           </div>
-          <div className="min-h-40 rounded-lg bg-[var(--color-surface-raised)]/70 p-5 md:min-h-56 md:p-6">
+          <div className="min-h-40 rounded-lg bg-[var(--color-surface-raised)]/52 p-5 md:min-h-56 md:p-6">
             <p className="text-muted text-[11px] uppercase tracking-[0.16em]">Visual area</p>
             {content ? <div className="mt-3">{content}</div> : null}
           </div>
         </>
       ) : (
-        <div className="space-y-5 md:space-y-6">
+        <>
           <div className="space-y-4">
             <p className="text-muted text-[11px] uppercase tracking-[0.16em]">{label}</p>
             {text ? (
@@ -119,14 +121,14 @@ export function CaseStudyTemplate({
           <div
             className={
               variant === "large"
-                ? "min-h-64 rounded-lg bg-[var(--color-surface-raised)]/70 p-5 md:min-h-80 md:p-6"
-                : "min-h-44 rounded-lg bg-[var(--color-surface-raised)]/70 p-5 md:min-h-56 md:p-6"
+                ? "min-h-64 rounded-lg bg-[var(--color-surface-raised)]/52 p-5 md:min-h-80 md:p-6"
+                : "min-h-44 rounded-lg bg-[var(--color-surface-raised)]/52 p-5 md:min-h-56 md:p-6"
             }
           >
             <p className="text-muted text-[11px] uppercase tracking-[0.16em]">Visual area</p>
             {content ? <div className="mt-3">{content}</div> : null}
           </div>
-        </div>
+        </>
       )}
     </div>
   );
@@ -193,19 +195,43 @@ export function CaseStudyTemplate({
           {"<- Back to home"}
         </Link>
 
-        <header className="space-y-10">
-          <h1 className="max-w-[18ch] text-4xl font-semibold tracking-[-0.02em] md:text-6xl md:leading-[1.02]">
-            {title}
-          </h1>
-          <p className="text-secondary max-w-[60ch] text-base leading-8 md:text-xl md:leading-9">
-            {subtitle}
-          </p>
-        </header>
+        <div className="space-y-7 md:space-y-9">
+          <header className="space-y-10">
+            <h1 className="max-w-[18ch] text-4xl font-semibold tracking-[-0.02em] md:text-6xl md:leading-[1.02]">
+              {title}
+            </h1>
+            <p className="text-secondary max-w-[60ch] text-base leading-8 md:text-xl md:leading-9">
+              {subtitle}
+            </p>
+          </header>
 
-        {sections.map((section) => (
+          {hook ? (
+            <blockquote className="max-w-[50ch] border-l border-[var(--color-border-subtle)]/32 pl-5 md:pl-6">
+              <p className="text-foreground/95 text-xl font-medium tracking-tight md:text-2xl md:leading-tight">
+                {hook}
+              </p>
+            </blockquote>
+          ) : null}
+        </div>
+
+        {sections.map((section, index) => (
           <RevealOnScroll key={section.title}>
-            <div className="space-y-16 md:space-y-24">
-              <section className="section-divider space-y-10 border-t pt-14 md:space-y-12 md:pt-20">
+            <div
+              className={
+                section.title === "Overview"
+                  ? "space-y-20 md:space-y-28"
+                  : "space-y-16 md:space-y-24"
+              }
+            >
+              <section
+                className={
+                  section.title === "Overview"
+                    ? "max-w-[82ch] space-y-10 rounded-2xl bg-[var(--color-surface-raised)]/16 px-5 py-10 md:space-y-12 md:px-6 md:py-12"
+                    : index % 2 === 0
+                      ? "max-w-[82ch] space-y-10 rounded-2xl bg-[var(--color-surface-raised)]/12 px-5 py-10 md:space-y-12 md:px-6 md:py-12"
+                      : "max-w-[82ch] space-y-10 rounded-2xl bg-[var(--color-surface-alt)]/12 px-5 py-10 md:space-y-12 md:px-6 md:py-12"
+                }
+              >
                 <div className="space-y-4">
                   <p className="text-muted text-xs uppercase tracking-[0.16em]">Section</p>
                   <h2 className="max-w-[22ch] text-3xl font-semibold tracking-[-0.01em] md:text-4xl">

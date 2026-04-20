@@ -9,7 +9,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
     <Link
       href={caseStudy.href}
-      className="card-surface group rounded-2xl p-7 shadow-xl shadow-black/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[var(--color-accent-secondary)]/70 hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-secondary)] md:p-8"
+      className="card-surface group rounded-2xl border-[var(--color-border-subtle)] bg-[var(--color-surface-alt)]/90 p-8 shadow-xl shadow-black/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-[var(--color-accent-secondary)]/75 hover:bg-[var(--color-surface-alt)] hover:shadow-2xl hover:shadow-black/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-secondary)] md:p-9"
       aria-label={`View case study ${caseStudy.title.toLowerCase()}`}
     >
       <p className="text-muted text-xs uppercase tracking-[0.16em]">Case Study</p>

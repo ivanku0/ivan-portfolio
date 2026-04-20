@@ -34,6 +34,7 @@ export default function OutputsPage() {
     <CaseStudyTemplate
       title="Structured AI Outputs"
       subtitle="A case study on transforming AI-generated content into structured, reusable artifacts that better fit real-world enterprise documentation needs."
+      hook="AI-generated content is only useful when it becomes a document people can actually use."
       overview={overview}
       overviewVisual="Unstructured output"
       challenge={challenge}

@@ -11,6 +11,12 @@
   --color-accent-primary: #8e6cff;
   --color-accent-secondary: #b7a3ff;
   --color-accent-deep: #6d4ed6;
+
+  /* RGB triplets for canvas/overlay alpha composition */
+  --color-page-bg-rgb: 28, 13, 38;
+  --color-muted-rgb: 168, 156, 172;
+  --color-accent-secondary-rgb: 183, 163, 255;
+  --color-border-subtle-rgb: 101, 88, 104;
 }
 
 @theme inline {
@@ -71,6 +77,15 @@ a:hover {
 
 .section-divider {
   border-top-color: var(--color-border-subtle);
+}
+
+.hero-readability-overlay {
+  background: radial-gradient(
+    90% 90% at 34% 38%,
+    rgba(var(--color-page-bg-rgb), 0.46) 0%,
+    rgba(var(--color-page-bg-rgb), 0.22) 45%,
+    rgba(var(--color-page-bg-rgb), 0) 75%
+  );
 }
 
 .reveal-on-scroll {
