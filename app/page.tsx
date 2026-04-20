@@ -1,5 +1,6 @@
 import { caseStudies } from "@/data/caseStudies";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { HeroAtmosphere } from "@/components/HeroAtmosphere";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -7,9 +8,14 @@ import { SiteFooter } from "@/components/SiteFooter";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="px-6 pb-12 pt-24 md:pb-18 md:pt-32">
+      <header className="relative overflow-hidden px-6 pb-12 pt-24 md:pb-18 md:pt-32">
+        <HeroAtmosphere />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(90%_90%_at_34%_38%,rgba(28,13,38,0.46)_0%,rgba(28,13,38,0.22)_45%,rgba(28,13,38,0)_75%)]"
+        />
         <div className="mx-auto max-w-6xl">
-          <section aria-label="Intro" className="space-y-7 md:space-y-8">
+          <section aria-label="Intro" className="relative z-20 space-y-7 md:space-y-8">
             <p className="text-muted text-xs uppercase tracking-[0.22em] md:text-sm">
               Ivan Kuo
             </p>
@@ -32,7 +38,7 @@ export default function Home() {
             <section
               id="selected-work"
               aria-labelledby="selected-work-heading"
-              className="section-divider space-y-12 border-t pt-20 md:space-y-14 md:pt-28"
+              className="space-y-12 pt-20 md:space-y-14 md:pt-28"
             >
               <SectionHeading
                 id="selected-work-heading"
