@@ -1,7 +1,7 @@
 import { caseStudies } from "@/data/caseStudies";
-import { CaseStudyCard } from "@/app/components/CaseStudyCard";
-import { SectionHeading } from "@/app/components/SectionHeading";
-import { SiteFooter } from "@/app/components/SiteFooter";
+import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { SectionHeading } from "@/components/SectionHeading";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export default function Home() {
   return (

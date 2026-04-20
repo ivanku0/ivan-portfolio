@@ -1,4 +1,4 @@
-import { SectionHeading } from "@/app/components/SectionHeading";
+import { SectionHeading } from "@/components/SectionHeading";
 
 export function SiteFooter() {
   return (

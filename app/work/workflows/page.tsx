@@ -1,4 +1,4 @@
-import { CaseStudyTemplate } from "@/src/components/CaseStudyTemplate";
+import { CaseStudyTemplate } from "@/components/CaseStudyTemplate";
 
 const overview = [
   "I worked on the workflow experience for LIGER, an AI platform used to support structured content generation in enterprise environments. The goal was to move beyond one-off prompting and toward repeatable, multi-step workflows that could better support real production work.",
