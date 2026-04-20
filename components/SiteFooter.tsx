@@ -5,7 +5,7 @@ export function SiteFooter() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="section-divider space-y-6 border-t pt-14 md:pt-20"
+      className="section-divider space-y-6 border-t pt-18 md:pt-24"
     >
       <SectionHeading
         id="contact-heading"

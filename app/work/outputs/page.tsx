@@ -35,9 +35,13 @@ export default function OutputsPage() {
       title="Structured AI Outputs"
       subtitle="A case study on transforming AI-generated content into structured, reusable artifacts that better fit real-world enterprise documentation needs."
       overview={overview}
+      overviewVisual="Unstructured output"
       challenge={challenge}
+      challengeVisual="Formatting gap"
       approach={approach}
+      approachVisual="Workflow to document system"
       outcome={outcome}
+      outcomeVisual="Structured output"
     />
   );
 }

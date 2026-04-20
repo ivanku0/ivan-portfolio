@@ -33,9 +33,13 @@ export default function ReconstructionPage() {
       title="From Screenshots to System"
       subtitle="A case study on using AI-assisted reconstruction to turn production interfaces into reusable design assets for faster and more realistic concept exploration."
       overview={overview}
+      overviewVisual="Production interface"
       challenge={challenge}
+      challengeVisual="Lack of system"
       approach={approach}
+      approachVisual="AI-assisted reconstruction"
       outcome={outcome}
+      outcomeVisual="Reusable design system"
     />
   );
 }

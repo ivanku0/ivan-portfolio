@@ -30,13 +30,13 @@ export default function WorkflowsPage() {
       title="AI Workflows"
       subtitle="A case study on designing AI-supported workflows that help teams move faster while preserving quality, accountability, and human judgment in production environments."
       overview={overview}
-      overviewVisual="Add a process map, workflow states, or annotated flow diagram here."
+      overviewVisual="Original workflow model"
       challenge={challenge}
-      challengeVisual="Add a friction snapshot, pain-point matrix, or key usability findings here."
+      challengeVisual="Linear vs exploratory workflows"
       approach={approach}
-      approachVisual="Add triptych model wireframes, interaction model evolution, or concept comparisons here."
+      approachVisual="Triptych model"
       outcome={outcome}
-      outcomeVisual="Add impact highlights, system-level outcomes, or adoption signals here."
+      outcomeVisual="Workflow system evolution"
     />
   );
 }
