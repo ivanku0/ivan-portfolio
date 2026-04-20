@@ -3,7 +3,7 @@ export function SiteFooter() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="space-y-4 pt-16 md:pt-20"
+      className="scroll-mt-28 space-y-4 pt-16 md:pt-20"
     >
       <h2 id="contact-heading" className="text-xl font-medium tracking-tight md:text-2xl">
         Contact

@@ -36,9 +36,9 @@ export default function Home() {
         <div className="mx-auto max-w-6xl space-y-32 md:space-y-48">
           <RevealOnScroll>
             <section
-              id="selected-work"
+              id="work"
               aria-labelledby="selected-work-heading"
-              className="space-y-14 pt-28 md:space-y-16 md:pt-38"
+              className="scroll-mt-28 space-y-14 pt-28 md:space-y-16 md:pt-38"
             >
               <div className="space-y-5">
                 <h2
