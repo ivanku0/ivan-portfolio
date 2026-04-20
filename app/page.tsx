@@ -1,17 +1,22 @@
+import { caseStudies } from "@/data/caseStudies";
+import { CaseStudyCard } from "@/app/components/CaseStudyCard";
+import { SectionHeading } from "@/app/components/SectionHeading";
+import { SiteFooter } from "@/app/components/SiteFooter";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      <header className="px-6 py-24 md:py-32">
-        <div className="mx-auto max-w-5xl">
-          <section aria-label="Intro" className="space-y-6">
-            <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="px-6 pb-16 pt-28 md:pb-24 md:pt-40">
+        <div className="mx-auto max-w-6xl">
+          <section aria-label="Intro" className="space-y-8 md:space-y-10">
+            <p className="text-muted text-xs uppercase tracking-[0.22em] md:text-sm">
               Ivan Kuo
             </p>
-            <h1 className="max-w-4xl text-5xl font-semibold tracking-tight md:text-6xl">
+            <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.02em] md:text-7xl">
               Designing AI systems grounded in human judgment, taste, and
               real-world use.
             </h1>
-            <p className="max-w-2xl text-lg leading-8 text-zinc-400">
+            <p className="text-secondary max-w-3xl text-lg leading-8 md:text-xl md:leading-9">
               Combining 10+ years of human-centered design with AI-native tools
               to build workflows, outputs, and systems that are fast, usable,
               and actually work.
@@ -20,74 +25,50 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="px-6 pb-32">
-        <div className="mx-auto max-w-5xl space-y-28 md:space-y-36">
+      <main className="px-6 pb-36 md:pb-44">
+        <div className="mx-auto max-w-6xl space-y-32 md:space-y-44">
           <section
             id="selected-work"
             aria-labelledby="selected-work-heading"
-            className="space-y-6 border-t border-zinc-800 pt-12 md:pt-16"
+            className="section-divider space-y-10 border-t pt-14 md:space-y-12 md:pt-20"
           >
-            <h2
+            <SectionHeading
               id="selected-work-heading"
-              className="text-2xl font-medium tracking-tight md:text-3xl"
-            >
-              Selected Work
-            </h2>
-            <p className="max-w-3xl text-base leading-8 text-zinc-400">
-              Placeholder for case studies and outcomes. This section will
-              highlight a few projects with context, process, and impact.
-            </p>
+              title="Selected Work"
+              description="Placeholder for case studies and outcomes. This section will highlight a few projects with context, process, and impact."
+            />
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {caseStudies.map((caseStudy) => (
+                <CaseStudyCard key={caseStudy.href} caseStudy={caseStudy} />
+              ))}
+            </div>
           </section>
 
           <section
             id="how-i-think"
             aria-labelledby="how-i-think-heading"
-            className="space-y-6 border-t border-zinc-800 pt-12 md:pt-16"
+            className="section-divider space-y-6 border-t pt-14 md:pt-20"
           >
-            <h2
+            <SectionHeading
               id="how-i-think-heading"
-              className="text-2xl font-medium tracking-tight md:text-3xl"
-            >
-              How I Think
-            </h2>
-            <p className="max-w-3xl text-base leading-8 text-zinc-400">
-              Placeholder for principles, decision-making framework, and
-              philosophy behind product, design, and AI systems work.
-            </p>
+              title="How I Think"
+              description="Placeholder for principles, decision-making framework, and philosophy behind product, design, and AI systems work."
+            />
           </section>
 
           <section
             id="background"
             aria-labelledby="background-heading"
-            className="space-y-6 border-t border-zinc-800 pt-12 md:pt-16"
+            className="section-divider space-y-6 border-t pt-14 md:pt-20"
           >
-            <h2
+            <SectionHeading
               id="background-heading"
-              className="text-2xl font-medium tracking-tight md:text-3xl"
-            >
-              Background
-            </h2>
-            <p className="max-w-3xl text-base leading-8 text-zinc-400">
-              Placeholder for experience, timeline, and selected roles across
-              design, strategy, and AI-enabled product development.
-            </p>
+              title="Background"
+              description="Placeholder for experience, timeline, and selected roles across design, strategy, and AI-enabled product development."
+            />
           </section>
-
-          <section
-            id="contact"
-            aria-labelledby="contact-heading"
-            className="space-y-6 border-t border-zinc-800 pt-12 md:pt-16"
-          >
-            <h2
-              id="contact-heading"
-              className="text-2xl font-medium tracking-tight md:text-3xl"
-            >
-              Contact
-            </h2>
-            <p className="max-w-3xl text-base leading-8 text-zinc-400">
-              Placeholder for email, social links, and collaboration inquiries.
-            </p>
-          </section>
+          <SiteFooter />
         </div>
       </main>
     </div>

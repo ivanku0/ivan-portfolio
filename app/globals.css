@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-page-bg: #1c0d26;
+  --color-surface-raised: #2a1833;
+  --color-surface-alt: #33243c;
+  --color-border-subtle: #645868;
+  --color-text-primary: #f5f1f7;
+  --color-text-secondary: #d2c8d6;
+  --color-text-muted: #a89cac;
+  --color-accent-primary: #8e6cff;
+  --color-accent-secondary: #b7a3ff;
+  --color-accent-deep: #6d4ed6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--color-page-bg);
+  --color-foreground: var(--color-text-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background-color: var(--color-page-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+a {
+  color: var(--color-accent-secondary);
+  text-decoration-color: var(--color-accent-deep);
+  text-underline-offset: 0.2em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-primary);
+  text-decoration-color: var(--color-accent-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.surface-raised {
+  background-color: var(--color-surface-raised);
+}
+
+.surface-alt {
+  background-color: var(--color-surface-alt);
+}
+
+.border-subtle {
+  border-color: var(--color-border-subtle);
+}
+
+.card-surface {
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.card-surface:hover {
+  background-color: var(--color-surface-alt);
+  border-color: var(--color-accent-secondary);
+}
+
+.section-divider {
+  border-top-color: var(--color-border-subtle);
 }
