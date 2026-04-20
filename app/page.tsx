@@ -38,7 +38,7 @@ export default function Home() {
             <section
               id="selected-work"
               aria-labelledby="selected-work-heading"
-              className="space-y-14 pt-24 md:space-y-16 md:pt-34"
+              className="space-y-14 pt-28 md:space-y-16 md:pt-38"
             >
               <div className="space-y-5">
                 <h2
@@ -48,8 +48,8 @@ export default function Home() {
                   Selected Work
                 </h2>
                 <p className="text-secondary max-w-3xl text-base leading-8">
-                  Placeholder for case studies and outcomes. This section will
-                  highlight a few projects with context, process, and impact.
+                  Selected projects exploring how AI systems can be structured,
+                  made predictable, and applied to real production work.
                 </p>
               </div>
 
@@ -65,13 +65,26 @@ export default function Home() {
             <section
               id="how-i-think"
               aria-labelledby="how-i-think-heading"
-              className="section-divider space-y-6 border-t pt-22 md:pt-30"
+              className="space-y-7 pt-22 md:space-y-8 md:pt-30"
             >
-              <SectionHeading
-                id="how-i-think-heading"
-                title="How I Think"
-                description="Placeholder for principles, decision-making framework, and philosophy behind product, design, and AI systems work."
-              />
+              <div className="space-y-5">
+                <h2
+                  id="how-i-think-heading"
+                  className="text-[1.7rem] font-semibold tracking-tight md:text-[2rem]"
+                >
+                  How I Think
+                </h2>
+                <p className="text-secondary max-w-3xl text-lg leading-8 md:text-xl md:leading-9">
+                  AI enables speed, but not judgment.
+                </p>
+                <p className="text-secondary max-w-3xl text-base leading-8 md:text-lg md:leading-9">
+                  Good products still depend on taste, decision making, and
+                  understanding real human needs. I use AI-native tools to move
+                  faster, but I rely on human-centered design to decide what
+                  should be built, how it should work, and what quality looks
+                  like in practice.
+                </p>
+              </div>
             </section>
           </RevealOnScroll>
 
@@ -79,13 +92,30 @@ export default function Home() {
             <section
               id="background"
               aria-labelledby="background-heading"
-              className="section-divider space-y-6 border-t pt-18 md:pt-24"
+              className="space-y-6 pt-18 md:space-y-7 md:pt-24"
             >
-              <SectionHeading
-                id="background-heading"
-                title="Background"
-                description="Placeholder for experience, timeline, and selected roles across design, strategy, and AI-enabled product development."
-              />
+              <div className="space-y-4">
+                <h2
+                  id="background-heading"
+                  className="text-xl font-medium tracking-tight md:text-2xl"
+                >
+                  Background
+                </h2>
+                <p className="text-secondary max-w-3xl text-base leading-8">
+                  I&apos;ve spent 10+ years designing products across enterprise,
+                  federal, and emerging technology environments. My work has
+                  spanned research, facilitation, interaction design, and
+                  systems thinking, and now increasingly focuses on AI-native
+                  products, workflows, and design infrastructure.
+                </p>
+                <ul className="text-secondary list-disc space-y-2 pl-5 text-sm leading-7 marker:text-[var(--color-text-muted)] md:text-[0.95rem]">
+                  <li>LIGER AI platform</li>
+                  <li>Federal systems including VA and USPS</li>
+                  <li>
+                    Consulting environments including KPMG and Booz Allen
+                  </li>
+                </ul>
+              </div>
             </section>
           </RevealOnScroll>
           <RevealOnScroll>

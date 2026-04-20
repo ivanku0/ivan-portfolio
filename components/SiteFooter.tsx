@@ -1,17 +1,16 @@
-import { SectionHeading } from "@/components/SectionHeading";
-
 export function SiteFooter() {
   return (
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="section-divider space-y-6 border-t pt-18 md:pt-24"
+      className="space-y-4 pt-16 md:pt-20"
     >
-      <SectionHeading
-        id="contact-heading"
-        title="Contact"
-        description="Placeholder for email, social links, and collaboration inquiries."
-      />
+      <h2 id="contact-heading" className="text-xl font-medium tracking-tight md:text-2xl">
+        Contact
+      </h2>
+      <p className="text-secondary max-w-2xl text-base leading-8">
+        Open to product design, AI systems, and early-stage exploration work.
+      </p>
     </section>
   );
 }
