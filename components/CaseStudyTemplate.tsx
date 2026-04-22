@@ -9,6 +9,7 @@ type VisualConfig = {
   label?: string;
   text?: string;
   content?: ReactNode;
+  bare?: boolean;
 };
 
 type CaseStudyTemplateProps = {
@@ -45,7 +46,13 @@ export function CaseStudyTemplate({
     visual: ReactNode | string | VisualConfig | undefined,
     fallbackText?: string,
     fallbackVariant: VisualVariant = "medium",
-  ): { label: string; text?: string; variant: VisualVariant; content?: ReactNode } => {
+  ): {
+    label: string;
+    text?: string;
+    variant: VisualVariant;
+    content?: ReactNode;
+    bare?: boolean;
+  } => {
     if (typeof visual === "string") {
       return { label: "Visual placeholder", text: visual, variant: fallbackVariant };
     }
@@ -62,6 +69,7 @@ export function CaseStudyTemplate({
         text: config.text ?? fallbackText,
         variant: config.variant ?? fallbackVariant,
         content: config.content as ReactNode | undefined,
+        bare: config.bare ?? false,
       };
     }
 
@@ -70,6 +78,7 @@ export function CaseStudyTemplate({
       text: fallbackText,
       variant: fallbackVariant,
       content: visual && typeof visual !== "string" ? (visual as ReactNode) : undefined,
+      bare: false,
     };
   };
 
@@ -78,11 +87,13 @@ export function CaseStudyTemplate({
     text,
     variant,
     content,
+    bare,
   }: {
     label: string;
     text?: string;
     variant: VisualVariant;
     content?: ReactNode;
+    bare?: boolean;
   }) => (
     <div
       className={
@@ -103,9 +114,14 @@ export function CaseStudyTemplate({
               </p>
             ) : null}
           </div>
-          <div className="min-h-40 rounded-lg bg-[var(--color-surface-raised)]/52 p-5 md:min-h-56 md:p-6">
-            <p className="text-muted text-[11px] uppercase tracking-[0.16em]">Visual area</p>
-            {content ? <div className="mt-3">{content}</div> : null}
+          <div
+            className={
+              bare
+                ? "min-h-40 md:min-h-56"
+                : "min-h-40 rounded-lg bg-[var(--color-surface-raised)]/52 p-5 md:min-h-56 md:p-6"
+            }
+          >
+            {content ? <div>{content}</div> : null}
           </div>
         </>
       ) : (
@@ -120,13 +136,16 @@ export function CaseStudyTemplate({
           </div>
           <div
             className={
-              variant === "large"
-                ? "min-h-64 rounded-lg bg-[var(--color-surface-raised)]/52 p-5 md:min-h-80 md:p-6"
-                : "min-h-44 rounded-lg bg-[var(--color-surface-raised)]/52 p-5 md:min-h-56 md:p-6"
+              bare
+                ? variant === "large"
+                  ? "min-h-64 md:min-h-80"
+                  : "min-h-44 md:min-h-56"
+                : variant === "large"
+                  ? "min-h-64 rounded-lg bg-[var(--color-surface-raised)]/52 p-5 md:min-h-80 md:p-6"
+                  : "min-h-44 rounded-lg bg-[var(--color-surface-raised)]/52 p-5 md:min-h-56 md:p-6"
             }
           >
-            <p className="text-muted text-[11px] uppercase tracking-[0.16em]">Visual area</p>
-            {content ? <div className="mt-3">{content}</div> : null}
+            {content ? <div>{content}</div> : null}
           </div>
         </>
       )}

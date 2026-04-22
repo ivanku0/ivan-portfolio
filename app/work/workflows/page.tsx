@@ -1,4 +1,6 @@
 import { CaseStudyTemplate } from "@/components/CaseStudyTemplate";
+import TriptychProduct from "@/src/components/TriptychProduct";
+import TriptychVisual from "@/components/TriptychVisual";
 
 const overview = [
   "I worked on the workflow experience for LIGER, an AI platform used to support structured content generation in enterprise environments. The goal was to move beyond one-off prompting and toward repeatable, multi-step workflows that could better support real production work.",
@@ -35,9 +37,27 @@ export default function WorkflowsPage() {
       challenge={challenge}
       challengeVisual="Linear vs exploratory workflows"
       approach={approach}
-      approachVisual="Triptych model"
+      approachVisual={{
+        label: "The Improvement",
+        text: "Workflows evolved from linear execution to a system separating definition, execution, and visibility.",
+        bare: true,
+        content: (
+          <div className="mb-16 mt-14 md:mt-16">
+            <TriptychVisual />
+          </div>
+        ),
+      }}
       outcome={outcome}
-      outcomeVisual="Workflow system evolution"
+      outcomeVisual={{
+        label: "Product implementation view",
+        text: "The triptych model as implemented in a product-facing interface.",
+        bare: true,
+        content: (
+          <div className="mt-10 md:mt-12">
+            <TriptychProduct />
+          </div>
+        ),
+      }}
     />
   );
 }
