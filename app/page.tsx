@@ -17,7 +17,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <section aria-label="Intro" className="relative z-20 space-y-7 md:space-y-8">
             <p className="text-muted text-xs uppercase tracking-[0.22em] md:text-sm">
-              hi, i'm ivan!
+              hi, i'm ivan
             </p>
             <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.02em] md:text-6xl">
               I design AI systems grounded in human judgment, taste, and
