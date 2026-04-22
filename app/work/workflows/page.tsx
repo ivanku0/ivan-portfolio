@@ -1,5 +1,5 @@
 import { CaseStudyTemplate } from "@/components/CaseStudyTemplate";
-import TriptychProduct from "@/src/components/TriptychProduct";
+import TriptychProduct from "@/components/TriptychProduct";
 import TriptychVisual from "@/components/TriptychVisual";
 
 const overview = [

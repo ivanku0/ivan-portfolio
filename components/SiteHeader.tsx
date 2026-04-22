@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { NavLink } from "./NavLink";
 
@@ -26,13 +27,14 @@ export function SiteHeader() {
           href="/"
           className="inline-flex items-center gap-2 text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:text-secondary"
         >
-          <img
+          <Image
             src="/favicon.ico"
             alt=""
             width={16}
             height={16}
             className="size-4 shrink-0 rounded-[3px] opacity-[0.72]"
             aria-hidden
+            unoptimized
           />
           ivankuo.com
         </Link>
