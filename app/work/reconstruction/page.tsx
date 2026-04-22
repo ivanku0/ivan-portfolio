@@ -33,6 +33,7 @@ export default function ReconstructionPage() {
       title="From Screenshots to System"
       subtitle="A case study on using AI-assisted reconstruction to turn production interfaces into reusable design assets for faster and more realistic concept exploration."
       hook="Fast concept exploration breaks down when design work is not grounded in production reality."
+      currentCaseStudyHref="/work/reconstruction"
       overview={overview}
       overviewVisual="Production interface"
       challenge={challenge}

@@ -4,6 +4,9 @@ export type CaseStudy = {
   href: string;
 };
 
+/** Update to your preferred contact address; used in case study footers. */
+export const portfolioContactEmail = "hello@ivankuo.com";
+
 export const caseStudies: CaseStudy[] = [
   {
     title: "Designing Predictable AI Workflows",
@@ -24,3 +27,9 @@ export const caseStudies: CaseStudy[] = [
     href: "/work/reconstruction",
   },
 ];
+
+export function getNextCaseStudy(currentHref: string): CaseStudy | null {
+  const index = caseStudies.findIndex((c) => c.href === currentHref);
+  if (index < 0) return null;
+  return caseStudies[(index + 1) % caseStudies.length];
+}

@@ -6,11 +6,11 @@ type StructureGroup = {
 
 const structureRows: StructureGroup[] = [
   {
-    parent: "1.0 Policy Context",
-    children: ["1.1 Requirements", "1.2 Roles and Responsibilities"],
+    parent: "1. Candidate Context",
+    children: ["1.1 Experience & Signals", "1.2 Strengths & Gaps"],
   },
   {
-    parent: "2.0 Draft Policy Definition",
+    parent: "2. Resume Summary",
     active: true,
   },
 ];
@@ -89,14 +89,14 @@ export default function TriptychVisual() {
               <div className="rounded-md border border-[var(--color-border-subtle)]/28 bg-[var(--color-page-bg)]/32 px-2.5 py-2">
                 <p className="text-[0.68rem] uppercase tracking-[0.12em] text-muted">Input</p>
                 <p className="mt-1 text-[0.76rem] leading-5 text-secondary">
-                  Generate draft language for section 2.0 using the approved constraints.
+                  Synthesize prior steps into a concise resume summary aligned to the target role.
                 </p>
               </div>
               <div className="border-t border-[var(--color-border-subtle)]/24" />
               <div className={`${activeShell} rounded-md px-2.5 py-2`}>
                 <p className="text-[0.68rem] uppercase tracking-[0.12em] text-muted">Output</p>
                 <p className="mt-1 text-[0.76rem] leading-5 text-foreground">
-                  Draft policy definition generated with citations and role constraints preserved.
+                  Summary generated with clear positioning, supporting evidence, and direction.
                 </p>
               </div>
             </div>
@@ -121,17 +121,19 @@ export default function TriptychVisual() {
             <div className="space-y-2.5 px-3 py-3.5">
               <div className="rounded-lg border border-[var(--color-border-subtle)]/28 bg-[var(--color-page-bg)]/42 px-2.5 py-2.5">
                 <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 1</p>
-                <p className="mt-1 text-[0.75rem] text-secondary">Context and requirements verified.</p>
+                <p className="mt-1 text-[0.75rem] text-secondary">Candidate baseline established</p>
+              </div>
+              <div className="rounded-lg border border-[var(--color-border-subtle)]/28 bg-[var(--color-page-bg)]/42 px-2.5 py-2.5">
+                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 2</p>
+                <p className="mt-1 text-[0.75rem] text-secondary">Signals extracted and structured</p>
               </div>
               <div className={`${activeShell} rounded-lg px-2.5 py-2.5`}>
-                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 2</p>
-                <p className="mt-1 text-[0.75rem] text-foreground">
-                  Draft policy definition updated from active step 2.0.
-                </p>
+                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 3</p>
+                <p className="mt-1 text-[0.75rem] text-foreground">Interpretation and positioning defined</p>
               </div>
               <div className="rounded-lg border border-dashed border-[var(--color-border-subtle)]/20 bg-[var(--color-page-bg)]/18 px-2.5 py-2.5">
-                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 3</p>
-                <p className="mt-1 text-[0.75rem] text-muted">Pending review and publication state.</p>
+                <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 4</p>
+                <p className="mt-1 text-[0.75rem] text-muted">Summary generated and ready for export</p>
               </div>
             </div>
           </section>
@@ -139,9 +141,8 @@ export default function TriptychVisual() {
 
       <div className="mx-auto w-full max-w-[68ch] rounded-xl bg-[var(--color-surface-raised)]/14 p-5 md:p-6">
         <figcaption className="max-w-[70ch] text-[0.74rem] leading-6 text-foreground/72 md:text-[0.8rem]">
-          The original model collapsed execution and output visibility into a single surface.
-          Introducing a third layer externalized system state, making workflows predictable,
-          inspectable, and easier to trust.
+          Externalizing system state transforms workflows from opaque generation into inspectable systems—where each
+          step contributes to a visible, cumulative output.
         </figcaption>
       </div>
     </figure>

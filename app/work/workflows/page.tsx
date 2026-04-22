@@ -32,14 +32,15 @@ export default function WorkflowsPage() {
       title="AI Workflows"
       subtitle="A case study on designing AI-supported workflows that help teams move faster while preserving quality, accountability, and human judgment in production environments."
       hook="AI workflows fail when users cannot predict what will happen before they run."
+      currentCaseStudyHref="/work/workflows"
       overview={overview}
       overviewVisual="Original workflow model"
       challenge={challenge}
       challengeVisual="Linear vs exploratory workflows"
       approach={approach}
       approachVisual={{
-        label: "The Improvement",
-        text: "Workflows evolved from linear execution to a system separating definition, execution, and visibility.",
+        label: "STRUCTURE → EXECUTION → VISIBILITY",
+        text: "Traditional workflows collapse definition and output into a single surface. This model separates structure, execution, and system visibility—making each step inspectable and predictable.",
         bare: true,
         content: (
           <div className="mb-16 mt-14 md:mt-16">
@@ -49,8 +50,8 @@ export default function WorkflowsPage() {
       }}
       outcome={outcome}
       outcomeVisual={{
-        label: "Product implementation view",
-        text: "The triptych model as implemented in a product-facing interface.",
+        label: "IN PRODUCT",
+        text: "The triptych model applied in a working interface—where each step generates, commits, and contributes to a visible system state.",
         bare: true,
         content: (
           <div className="mt-10 md:mt-12">

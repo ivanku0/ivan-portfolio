@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { getNextCaseStudy, portfolioContactEmail } from "@/data/caseStudies";
 
 type VisualVariant = "large" | "medium" | "split";
 
@@ -16,6 +17,10 @@ type CaseStudyTemplateProps = {
   title: string;
   subtitle: string;
   hook?: string;
+  /** Current case study route (e.g. `/work/workflows`) — used to link the next case study in order. */
+  currentCaseStudyHref: string;
+  /** Optional override; defaults to `portfolioContactEmail` from `@/data/caseStudies`. */
+  contactEmail?: string;
   overview: string | string[];
   challenge: string | string[];
   approach: string | string[];
@@ -30,6 +35,8 @@ export function CaseStudyTemplate({
   title,
   subtitle,
   hook,
+  currentCaseStudyHref,
+  contactEmail = portfolioContactEmail,
   overview,
   challenge,
   approach,
@@ -182,30 +189,38 @@ export function CaseStudyTemplate({
     {
       title: "Approach",
       content: toParagraphs(approach),
-      visual: {
-        ...normalizeVisual(
+      visual: (() => {
+        const v = normalizeVisual(
           approachVisual,
           "Add workflow models, wireframes, or diagrams that show the process.",
           "large",
-        ),
-        label: "Approach visual",
-        variant: "large" as VisualVariant,
-      },
+        );
+        return {
+          ...v,
+          label: v.label !== "Visual placeholder" ? v.label : "Approach visual",
+          variant: "large" as VisualVariant,
+        };
+      })(),
     },
     {
       title: "Outcome",
       content: toParagraphs(outcome),
-      visual: {
-        ...normalizeVisual(
+      visual: (() => {
+        const v = normalizeVisual(
           outcomeVisual,
           "Add outcomes, impact snapshots, or result-oriented visuals.",
           "medium",
-        ),
-        label: "Outcome visual",
-        variant: "medium" as VisualVariant,
-      },
+        );
+        return {
+          ...v,
+          label: v.label !== "Visual placeholder" ? v.label : "Outcome visual",
+          variant: "medium" as VisualVariant,
+        };
+      })(),
     },
   ] as const;
+
+  const nextCaseStudy = getNextCaseStudy(currentCaseStudyHref);
 
   return (
     <main className="min-h-screen bg-background px-6 pb-32 pt-20 text-foreground md:pb-40 md:pt-28">
@@ -273,6 +288,36 @@ export function CaseStudyTemplate({
             </div>
           </RevealOnScroll>
         ))}
+
+        <RevealOnScroll>
+          <div className="space-y-16 md:space-y-24">
+            <section className="max-w-[82ch] space-y-8 rounded-2xl bg-[var(--color-surface-raised)]/12 px-5 py-10 md:space-y-9 md:px-6 md:py-12">
+              <div className="space-y-4">
+                <p className="text-muted text-xs uppercase tracking-[0.16em]">Closing</p>
+                <h2 className="max-w-[28ch] text-3xl font-semibold tracking-[-0.01em] md:text-4xl">
+                  Want to work together?
+                </h2>
+                <p className="text-secondary max-w-[68ch] text-[1.02rem] leading-8 md:leading-9">
+                  Reach out at{" "}
+                  <a href={`mailto:${contactEmail}`} className="text-sm md:text-[1.02rem]">
+                    {contactEmail}
+                  </a>
+                  .
+                </p>
+              </div>
+              <div className="flex max-w-[68ch] flex-col gap-3 border-t border-[var(--color-border-subtle)]/22 pt-8 text-sm md:flex-row md:items-center md:justify-between md:gap-6 md:pt-9">
+                <Link href="/" className="inline-block">
+                  {"<- Back to home"}
+                </Link>
+                {nextCaseStudy ? (
+                  <Link href={nextCaseStudy.href} className="inline-block md:text-right">
+                    {`Next case study: ${nextCaseStudy.title} →`}
+                  </Link>
+                ) : null}
+              </div>
+            </section>
+          </div>
+        </RevealOnScroll>
       </div>
     </main>
   );
