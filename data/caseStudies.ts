@@ -11,7 +11,7 @@ export const caseStudies: CaseStudy[] = [
   {
     title: "Designing Predictable AI Workflows",
     description:
-      "Placeholder summary for problem framing, shipped solution, and measurable outcomes.",
+      "A redesign of AI workflow UX from an implicit prompt chain to a visible system where each saved step updates a traceable report section.",
     href: "/work/workflows",
   },
   {
