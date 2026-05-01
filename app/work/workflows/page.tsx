@@ -1,4 +1,5 @@
 import { CaseStudyTemplate } from "@/components/CaseStudyTemplate";
+import OriginalWorkflowModel from "@/components/OriginalWorkflowModel";
 import TriptychProduct from "@/components/TriptychProduct";
 import TriptychVisual from "@/components/TriptychVisual";
 
@@ -34,7 +35,16 @@ export default function WorkflowsPage() {
       hook="AI workflows fail when users cannot predict what will happen before they run."
       currentCaseStudyHref="/work/workflows"
       overview={overview}
-      overviewVisual="Original workflow model"
+      overviewVisual={{
+        label: "ORIGINAL MODEL",
+        text: "The baseline workflow UI before the triptych redesign: step-by-step generation with state and assembly remaining implicit.",
+        bare: true,
+        content: (
+          <div className="mb-14 mt-12 md:mb-16 md:mt-14">
+            <OriginalWorkflowModel />
+          </div>
+        ),
+      }}
       challenge={challenge}
       challengeVisual="Linear vs exploratory workflows"
       approach={approach}
