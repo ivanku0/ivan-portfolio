@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/data/caseStudies";
+import { CaseStudySplash } from "@/components/CaseStudySplash";
 
 type CaseStudyCardProps = {
   caseStudy: CaseStudy;
@@ -13,6 +14,9 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
       aria-label={`View case study ${caseStudy.title.toLowerCase()}`}
     >
       <p className="text-muted text-xs uppercase tracking-[0.16em]">Case Study</p>
+      <div className="mt-5">
+        <CaseStudySplash href={caseStudy.href} />
+      </div>
       <h3 className="mt-5 text-2xl font-medium tracking-tight md:text-[1.7rem]">
         {caseStudy.title}
       </h3>

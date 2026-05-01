@@ -1,30 +1,30 @@
 import { CaseStudyTemplate } from "@/components/CaseStudyTemplate";
 
 const overview = [
-  "I worked on early design exploration for a mobile virtual assistant experience, where the team needed to quickly prototype new ideas in a way that felt grounded in the existing product.",
-  "However, there was no established design system, no reusable assets, and no clear brand guidance available for the team to build from. Starting from scratch would have resulted in generic concepts that did not reflect the actual product experience.",
-  "To move faster while maintaining realism, I used AI-assisted tools to reconstruct the existing interface from production artifacts and convert it into a reusable design foundation.",
+  "The team needed to explore new assistant concepts quickly, but early concepts looked generic and disconnected from the production product.",
+  "There was no established design system, no reusable component library, and limited brand-ready assets. Starting from scratch produced ideas fast, but not ideas stakeholders trusted.",
+  "My role was to build a production-grounded design foundation by reconstructing the existing interface from artifacts, then turning that reconstruction into reusable assets for concept work.",
 ];
 
 const challenge = [
-  "The core challenge was not generating ideas, but generating credible ones.",
-  "Without a design system or asset library, any new concept work risked feeling disconnected from the real product. This made it difficult to evaluate ideas, align with stakeholders, or build confidence in proposed directions.",
-  "At the same time, manually recreating the interface would have been slow and inefficient. The team needed a way to quickly produce design artifacts that were both high fidelity and grounded in production reality.",
+  "The challenge was credibility, not idea quantity. Without a system or reusable assets, concept explorations drifted away from real product behavior.",
+  "That made reviews harder. Stakeholders questioned fidelity instead of evaluating direction, and teams spent time debating realism rather than product decisions.",
+  "Manual recreation would have been too slow, so the process needed to produce high-fidelity design artifacts quickly while staying anchored to production reality.",
 ];
 
 const approach = [
-  "I approached this as a reconstruction problem rather than a traditional design exercise.",
-  "First, I used AI-assisted tooling to ingest screenshots of the existing interface and convert them into editable design components. This allowed me to rapidly recreate the structure, layout, and hierarchy of the production UI inside a design environment.",
-  "To improve accuracy, I supplemented this process by referencing frontend CSS from the live system, ensuring that spacing, typography, and styling behavior were consistent with what users actually experienced.",
-  "From there, I built out a set of reusable assets based on the reconstructed interface. These assets could be manipulated, extended, and recombined to support new concepts, allowing for rapid iteration without losing alignment with the real product.",
-  "This effectively created a lightweight, AI-assisted design system that could be used for ongoing exploration.",
+  "A key realization was that the bottleneck was not concept speed, it was the lack of production-grounded design infrastructure.",
+  "I approached the problem as reconstruction, not greenfield design. First, I used AI-assisted tooling to ingest screenshots and convert interface regions into editable design components.",
+  "Then I cross-checked reconstructed layouts against frontend CSS references, aligning spacing, typography, and visual behavior to the live product.",
+  "From that base, I built reusable assets that could be extended and recombined for new concepts, so teams could iterate quickly without losing realism.",
+  "This created a lightweight reconstruction pipeline that functioned like a practical design system for ongoing exploration.",
 ];
 
 const outcome = [
-  "This approach significantly accelerated the design process while improving the quality of exploration.",
-  "Instead of starting from a blank canvas, I was able to work from a system that was already grounded in production reality. This made concepts easier to evaluate, communicate, and evolve.",
-  "It also demonstrated a broader shift in how design work can be done. AI can be used not just to generate new ideas, but to deconstruct and reconstruct existing systems into reusable design infrastructure.",
-  "That capability creates a new level of speed and flexibility, allowing designers to move quickly without sacrificing realism or quality.",
+  "The approach accelerated concept development while improving fidelity. Instead of starting from a blank canvas, exploration began from assets already grounded in production behavior.",
+  "This improved review quality because teams could evaluate interaction direction directly, rather than first debating whether mocks reflected the real product.",
+  "From a product perspective, the method reduced concept-to-review friction and increased confidence in exploratory proposals.",
+  "It also demonstrated a repeatable pattern for AI-assisted design work: deconstruct existing interfaces into reusable infrastructure, then iterate quickly without sacrificing realism.",
 ];
 
 export default function ReconstructionPage() {

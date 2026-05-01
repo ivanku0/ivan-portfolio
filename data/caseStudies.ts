@@ -17,13 +17,13 @@ export const caseStudies: CaseStudy[] = [
   {
     title: "Designing Structured AI Outputs",
     description:
-      "Placeholder summary for product strategy, interaction design, and operational rollout.",
+      "A system redesign that mapped workflow steps to document hierarchy so AI-generated content became structured, styled, and immediately usable for enterprise deliverables.",
     href: "/work/outputs",
   },
   {
     title: "From Screenshots to System",
     description:
-      "Using AI to reconstruct production interfaces into reusable design systems for rapid exploration.",
+      "An AI-assisted reconstruction pipeline that converted production screenshots into reusable, high-fidelity design assets for faster and more credible concept exploration.",
     href: "/work/reconstruction",
   },
 ];
