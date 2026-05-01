@@ -157,12 +157,6 @@ export default function OriginalWorkflowModel() {
               ))}
               <button
                 type="button"
-                className="rounded border border-slate-300 bg-slate-50 px-2.5 py-1 text-[11px] font-medium text-slate-700"
-              >
-                Refine Response
-              </button>
-              <button
-                type="button"
                 className="ml-auto rounded border border-indigo-300 bg-indigo-50 px-3 py-1 text-[11px] font-semibold text-indigo-700"
               >
                 Next

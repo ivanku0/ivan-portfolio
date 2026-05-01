@@ -1,6 +1,7 @@
 import { CaseStudyTemplate } from "@/components/CaseStudyTemplate";
 import OriginalWorkflowModel from "@/components/OriginalWorkflowModel";
 import TriptychProduct from "@/components/TriptychProduct";
+import WorkflowChallenge from "@/components/WorkflowChallenge";
 import TriptychVisual from "@/components/TriptychVisual";
 
 const overview = [
@@ -46,7 +47,17 @@ export default function WorkflowsPage() {
         ),
       }}
       challenge={challenge}
-      challengeVisual="Linear vs exploratory workflows"
+      challengeVisual={{
+        variant: "large",
+        label: "CHALLENGE VISUAL",
+        text: "Workflows are step-based, but all meaningful work happens inside a single execution surface.",
+        bare: true,
+        content: (
+          <div className="mb-14 mt-12 md:mb-16 md:mt-14">
+            <WorkflowChallenge />
+          </div>
+        ),
+      }}
       approach={approach}
       approachVisual={{
         label: "STRUCTURE → EXECUTION → VISIBILITY",

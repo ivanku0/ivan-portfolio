@@ -136,7 +136,11 @@ export function CaseStudyTemplate({
           <div className="space-y-4">
             <p className="text-muted text-[11px] uppercase tracking-[0.16em]">{label}</p>
             {text ? (
-              <p className="text-secondary max-w-[62ch] text-sm leading-7 md:text-base md:leading-8">
+              <p
+                className={`text-secondary text-sm leading-7 md:text-base md:leading-8 ${
+                  variant === "large" ? "max-w-[78ch]" : "max-w-[62ch]"
+                }`}
+              >
                 {text}
               </p>
             ) : null}
@@ -176,15 +180,18 @@ export function CaseStudyTemplate({
     {
       title: "Challenge",
       content: toParagraphs(challenge),
-      visual: {
-        ...normalizeVisual(
+      visual: (() => {
+        const v = normalizeVisual(
           challengeVisual,
           "Add a visual that highlights key constraints and friction points.",
           "split",
-        ),
-        label: "Challenge visual",
-        variant: "split" as VisualVariant,
-      },
+        );
+        return {
+          ...v,
+          label: v.label !== "Visual placeholder" ? v.label : "Challenge visual",
+          variant: v.variant,
+        };
+      })(),
     },
     {
       title: "Approach",
