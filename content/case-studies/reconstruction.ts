@@ -6,37 +6,37 @@ export const reconstructionCaseStudy: CaseStudyContent = {
   card: {
     title: "From Screenshots to System",
     description:
-      "Built an AI-assisted pipeline to turn production screenshots into reusable design assets—so concept work stayed grounded in the real product.",
+      "Built an AI-assisted pipeline to reconstruct production screenshots into reusable design assets—so assistant concepts stayed credible under fast exploration.",
   },
   page: {
     title: "From Screenshots to System",
     subtitle:
-      "When early concepts looked generic and stakeholders questioned fidelity, I reconstructed the live interface into reusable components for faster, credible exploration.",
+      "When there was no design system to start from, I turned live UI captures and CSS into a lightweight component library teams could reuse for AI assistant exploration.",
     hook: "Fast concept exploration breaks down when design work is not grounded in production reality.",
     metaDescription:
-      "Case study on AI-assisted reconstruction of production UIs into reusable design assets.",
+      "Case study on AI-assisted reconstruction of production interfaces into reusable design assets.",
   },
   sections: {
     overview: [
-      "The team needed to explore new assistant concepts quickly, but early mocks looked generic and disconnected from the production product.",
-      "There was no design system, no reusable component library, and limited brand-ready assets. Speed was high; trust in reviews was low.",
-      "I built a production-grounded foundation by reconstructing the existing interface from artifacts, then turning that reconstruction into assets for concept work.",
+      "The team needed to explore new AI assistant concepts quickly on a platform with no established design system, no reusable component library, and limited brand-ready assets. Early mocks were fast to produce but looked generic—stakeholders questioned fidelity before they could evaluate direction.",
+      "I led reconstruction of the production interface into editable assets: screenshot ingestion, AI-assisted region extraction, CSS cross-checking, and a practical library teams could extend for concept work.",
+      "The goal was infrastructure for credible exploration—not another round of one-off screens that looked plausible in isolation but failed in review.",
     ],
     challenge: [
-      "The bottleneck was credibility, not idea volume. Without reusable assets, explorations drifted from real product behavior.",
-      "Reviews stalled on fidelity instead of direction. Teams debated whether mocks reflected the live product before they could evaluate the idea.",
-      "Manual recreation was too slow. The process had to produce high-fidelity artifacts quickly while staying anchored to production.",
+      "The bottleneck was credibility, not idea volume. Without reusable assets grounded in production, concepts drifted from how the product actually behaved.",
+      "Reviews stalled on realism. Teams debated whether mocks matched the live app instead of whether the assistant interaction was worth pursuing.",
+      "Manual screen recreation was too slow to keep pace with exploration. The process had to produce high-fidelity artifacts quickly while staying anchored to production reality—and without exposing proprietary UI in portfolio artifacts.",
     ],
     approach: [
-      "The constraint was missing design infrastructure—not lack of concepts.",
-      "I used AI-assisted tooling to ingest screenshots and convert interface regions into editable design components.",
-      "I cross-checked layouts against frontend CSS references, aligning spacing, typography, and visual behavior to the live product.",
-      "From that base I built reusable assets teams could extend and recombine—iteration without losing realism.",
+      "The constraint was missing design infrastructure, not a lack of ideas.",
+      "I treated the work as reconstruction, not greenfield design: ingest production screenshots, use AI-assisted tooling to convert interface regions into editable components, then validate against frontend CSS references for spacing, typography, and visual behavior.",
+      "From that base I built reusable assets teams could extend and recombine—iteration at concept speed without losing the recognizable patterns of the live system.",
+      "The pipeline functioned like a lightweight design system for ongoing exploration: deconstruct what exists, then branch quickly on credible foundations.",
     ],
     outcome: [
-      "Concept development accelerated while fidelity improved. Exploration started from assets grounded in production behavior, not blank canvases.",
-      "Review quality improved: teams evaluated interaction direction directly instead of arguing about mock accuracy first.",
-      "The method became a repeatable pattern—deconstruct the live interface into infrastructure, then iterate quickly without sacrificing realism.",
+      "Concept development accelerated while fidelity improved. Exploration started from production-grounded components instead of blank canvases.",
+      "Review quality shifted earlier toward product decisions—stakeholders recognized the live system in the mocks, so conversations focused on interaction direction and scope.",
+      "The method became repeatable: deconstruct the interface into reusable infrastructure, validate with CSS, then iterate on assistant concepts without sacrificing realism.",
     ],
   },
   visuals: {
@@ -47,20 +47,20 @@ export const reconstructionCaseStudy: CaseStudyContent = {
   },
   visualLabels: {
     overview: {
-      label: "Production interface",
-      text: "Screenshots and CSS references as the source of truth.",
+      label: "Production screenshots",
+      text: "Live UI captures as the source of truth for reconstruction.",
     },
     challenge: {
       label: "No system",
-      text: "Concepts start from scratch and drift from production behavior.",
+      text: "Blank-slate concepts look fast—but reviews stall on fidelity, not direction.",
     },
     approach: {
       label: "Reconstruction pipeline",
-      text: "Screenshot ingestion, component extraction, and CSS alignment.",
+      text: "Screenshot ingest → component extract → CSS alignment.",
     },
     outcome: {
-      label: "Reusable assets",
-      text: "A lightweight library for credible concept exploration.",
+      label: "Reusable library",
+      text: "Components teams extend and recombine for new assistant concepts.",
     },
   },
 };

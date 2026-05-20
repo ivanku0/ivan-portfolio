@@ -21,7 +21,7 @@ Use top-level `#` headings to separate pieces. Each block follows the same templ
 | Original Workflow Model / Challenge Visual | Workflows — overview / challenge visuals |
 | Resume Analysis Workflow Prototype | Workflows — outcome visual (TriptychProduct) |
 | *(add)* Structured AI Outputs | `outputs.ts` |
-| *(add)* From Screenshots to System | `reconstruction.ts` |
+| From Screenshots to System | `reconstruction.ts` |
 
 Add new case studies as additional `#` sections in the same file—do not split into per-slug files unless the doc becomes hard to maintain.
 
@@ -38,4 +38,4 @@ Add new case studies as additional `#` sections in the same file—do not split 
 |-------|------------------------|---------------|
 | workflows | Yes | Yes |
 | outputs | Add section when ready | Draft (not yet from master doc) |
-| reconstruction | Add section when ready | Draft (not yet from master doc) |
+| reconstruction | Yes | Yes |

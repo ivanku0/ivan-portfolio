@@ -152,3 +152,62 @@
 * - State modeling  
 * - Workflow architecture  
 * - Ability to turn abstract concepts into coherent, testable experiences  
+
+---
+
+# From Screenshots to System
+
+## Product / Context
+
+The team needed to explore new AI assistant concepts quickly on a production platform that had no established design system, no reusable component library, and limited brand-ready assets. Early concepts were fast to produce but looked generic—stakeholders questioned whether mocks reflected the real product before they could evaluate interaction direction.
+
+The work focused on building production-grounded design infrastructure: turning live interface artifacts into reusable components so exploration could move at concept speed without losing fidelity.
+
+---
+
+## Your Role and Constraints
+
+Led reconstruction of the production interface into editable design assets and a lightweight library teams could extend for concept work.
+
+Responsibilities included:
+
+- Defining a screenshot-to-component reconstruction pipeline
+- Using AI-assisted tooling to ingest production captures and extract interface regions
+- Cross-checking reconstructed layouts against frontend CSS references
+- Building reusable Figma (or equivalent) assets teams could recombine for new concepts
+- Supporting design reviews with artifacts grounded in real product behavior
+
+Constraints included:
+
+- No formal design system to start from
+- Need to avoid proprietary UI/IP exposure in portfolio artifacts
+- Manual recreation of screens was too slow for exploration cadence
+- Concepts had to stay credible to engineering and product stakeholders familiar with the live app
+- AI tooling required careful validation—generated structure still needed human alignment to production CSS
+
+---
+
+## One Before / After Moment
+
+### Before
+
+Concept exploration started from blank canvases or generic AI-generated layouts. Reviews spent time on whether mocks looked like the real product instead of whether the interaction direction was right.
+
+### After
+
+Exploration began from components reconstructed from production screenshots and CSS. Teams could iterate on assistant concepts quickly while stakeholders recognized spacing, typography, and layout patterns from the live system—reviews shifted to product decisions earlier.
+
+---
+
+## What You Want a Hiring Manager to Remember
+
+You build the design infrastructure that makes fast exploration credible—not just the concepts themselves.
+
+This project demonstrates:
+
+- Production-grounded design systems thinking under constraints
+- AI-assisted design workflows with human validation
+- Ability to turn ambiguous tooling output into reusable assets
+- Reducing concept-to-review friction in cross-functional teams
+- Practical methods for deconstructing live UIs into iteration-ready libraries
+

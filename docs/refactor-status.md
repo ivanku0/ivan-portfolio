@@ -35,5 +35,5 @@ Living log for the portfolio v2 refactor. Case study copy is edited in `content/
 
 - [x] Workflows copy from `Portfolio.context` — approved in browser
 - [x] Outputs copy + `OutputsVisual` diagrams (agent draft — **re-sync from master doc** when outputs section is added)
-- [ ] Add `# Structured AI Outputs` (and reconstruction) sections to `portfolio-case-studies.md` if not already there
-- [ ] Rewrite `outputs.ts` / `reconstruction.ts` from those sections
+- [x] Reconstruction section in `portfolio-case-studies.md` + `reconstruction.ts` + `ReconstructionVisual`
+- [ ] Add `# Structured AI Outputs` to master doc when ready; re-sync `outputs.ts`
