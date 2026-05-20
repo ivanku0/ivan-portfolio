@@ -1,4 +1,11 @@
-import { CaseStudyCard, HeroAtmosphere, RevealOnScroll, SectionHeading } from "@/components/home";
+import {
+  CaseStudyCard,
+  HomeHero,
+  HomePrinciples,
+  HomeSection,
+  RevealOnScroll,
+  SectionHeading,
+} from "@/components/home";
 import { SiteFooter } from "@/components/layout";
 import { getCaseStudyCards } from "@/content";
 
@@ -7,40 +14,32 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="relative overflow-hidden px-6 pb-12 pt-24 md:pb-16 md:pt-32">
-        <HeroAtmosphere />
-        <div
-          aria-hidden="true"
-          className="hero-readability-overlay pointer-events-none absolute inset-0 z-10"
-        />
-        <div className="layout-width mx-auto">
-          <section aria-label="Intro" className="relative z-20 space-y-7 md:space-y-8">
-            <p className="text-muted text-xs uppercase tracking-[0.22em] md:text-sm">
-              hi, I&apos;m ivan
-            </p>
-            <h1 className="prose-width max-w-5xl text-[length:var(--text-display)] font-semibold tracking-[-0.02em]">
-              I design AI products where speed and judgment both matter.
-            </h1>
-            <p className="text-secondary prose-width text-[length:var(--text-hero-lead)] leading-8 md:leading-9">
-              Ten years in human-centered design, now focused on AI-native workflows, structured
-              outputs, and systems people can trust in production—not just in demos.
-            </p>
-          </section>
-        </div>
-      </header>
+      <HomeHero>
+        <section aria-label="Intro" className="space-y-7 md:space-y-8">
+          <p className="hero-intro">你好, i&apos;m ivan!</p>
+          <h1 className="prose-width max-w-5xl text-[length:var(--text-display)] font-semibold tracking-[-0.02em]">
+            I design AI products where speed and judgment both matter.
+          </h1>
+          <p className="text-secondary prose-width text-[length:var(--text-hero-lead)] leading-8 md:leading-9">
+            Ten years in human-centered design, now focused on AI-native workflows, structured
+            outputs, and systems people can trust in production, not just in demos.
+          </p>
+        </section>
+      </HomeHero>
 
-      <main className="px-6 pb-36 md:pb-44">
-        <div className="layout-width mx-auto space-y-section md:space-y-section-md">
-          <RevealOnScroll>
-            <section
-              id="work"
-              aria-labelledby="selected-work-heading"
-              className="scroll-mt-28 space-y-14 pt-28 md:space-y-16 md:pt-32"
-            >
+      <main className="pb-36 md:pb-44">
+        <RevealOnScroll>
+          <HomeSection
+            id="work"
+            variant="featured"
+            atmosphere="structural"
+            labelledBy="selected-work-heading"
+          >
+            <div className="space-y-12 md:space-y-14">
               <SectionHeading
                 id="selected-work-heading"
                 title="Selected Work"
-                description="Enterprise AI workflow work plus a personal product—systems thinking from flagship platforms to a niche table tool."
+                description="Four projects across enterprise AI platforms and a personal product I shipped end to end."
               />
 
               <div className="grid gap-5 md:grid-cols-2 md:gap-6">
@@ -48,56 +47,60 @@ export default function Home() {
                   <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
                 ))}
               </div>
-            </section>
-          </RevealOnScroll>
+            </div>
+          </HomeSection>
+        </RevealOnScroll>
 
-          <RevealOnScroll>
-            <section
-              id="how-i-think"
-              aria-labelledby="how-i-think-heading"
-              className="space-y-7 pt-20 md:space-y-8 md:pt-28"
-            >
-              <SectionHeading
-                id="how-i-think-heading"
-                title="How I Think"
-                size="lg"
-              />
-              <p className="text-secondary prose-width text-[length:var(--text-hero-lead)] leading-8 md:leading-9">
-                AI makes iteration cheap. It does not make the hard calls cheap—what to build, what
-                good looks like, when to stop.
+        <RevealOnScroll className="mt-12 md:mt-16">
+          <HomeSection
+            id="how-i-think"
+            variant="panel"
+            atmosphere="organic"
+            labelledBy="how-i-think-heading"
+          >
+            <div className="space-y-10 md:space-y-12">
+              <SectionHeading id="how-i-think-heading" title="How I Think" />
+              <p className="home-section-lead">
+                AI makes iteration cheap. The hard calls are still human: what to build, what good
+                looks like, when to stop.
               </p>
-              <p className="text-secondary prose-width text-base leading-8 md:text-lg md:leading-9">
-                I use AI-native tools to move faster, and human-centered design to decide what
-                deserves that speed: taste, tradeoffs, and whether the result holds up for real
-                users in real environments.
+              <p className="home-section-body">
+                I use AI-native tools to move faster and human-centered design to decide what
+                deserves that speed.
               </p>
-            </section>
-          </RevealOnScroll>
+              <HomePrinciples />
+            </div>
+          </HomeSection>
+        </RevealOnScroll>
 
-          <RevealOnScroll>
-            <section
-              id="background"
-              aria-labelledby="background-heading"
-              className="space-y-6 pt-16 md:space-y-7 md:pt-24"
-            >
-              <SectionHeading id="background-heading" title="Background" size="md" />
-              <p className="text-secondary prose-width text-base leading-8">
-                I&apos;ve spent 10+ years designing products across enterprise, federal, and
-                emerging technology environments—research, facilitation, interaction design, and
-                systems thinking, with increasing focus on AI-native products and design
-                infrastructure.
+        <RevealOnScroll className="mt-10 md:mt-12">
+          <HomeSection
+            id="background"
+            variant="panel"
+            atmosphere="blend"
+            labelledBy="background-heading"
+          >
+            <div className="space-y-8 md:space-y-9">
+              <SectionHeading id="background-heading" title="Background" />
+              <p className="home-section-lead">
+                Ten-plus years designing across enterprise, federal, and emerging technology:
+                research, facilitation, interaction design, and systems thinking, with a growing
+                focus on AI-native products and design infrastructure.
               </p>
-              <ul className="text-secondary list-disc space-y-2 pl-5 text-sm leading-7 marker:text-muted md:text-[0.95rem]">
+              <ul className="home-credential-list" aria-label="Selected experience">
                 <li>LIGER AI platform</li>
-                <li>Federal systems including VA and USPS</li>
-                <li>Consulting environments including KPMG and Booz Allen</li>
+                <li>VA and USPS federal systems</li>
+                <li>KPMG and Booz Allen consulting</li>
               </ul>
-            </section>
-          </RevealOnScroll>
-          <RevealOnScroll>
+            </div>
+          </HomeSection>
+        </RevealOnScroll>
+
+        <RevealOnScroll className="mt-16 px-6 md:mt-20">
+          <div className="layout-width mx-auto border-t border-border-subtle/35 pt-12 md:pt-14">
             <SiteFooter />
-          </RevealOnScroll>
-        </div>
+          </div>
+        </RevealOnScroll>
       </main>
     </div>
   );

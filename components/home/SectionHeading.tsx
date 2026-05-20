@@ -2,28 +2,15 @@ type SectionHeadingProps = {
   id: string;
   title: string;
   description?: string;
-  size?: "lg" | "md";
 };
 
-export function SectionHeading({
-  id,
-  title,
-  description,
-  size = "lg",
-}: SectionHeadingProps) {
-  const titleClass =
-    size === "lg"
-      ? "text-[length:var(--text-section)] font-semibold tracking-tight"
-      : "text-[length:var(--text-section-sm)] font-medium tracking-tight";
-
+export function SectionHeading({ id, title, description }: SectionHeadingProps) {
   return (
-    <div className="space-y-4">
-      <h2 id={id} className={titleClass}>
+    <header className="home-section-header">
+      <h2 id={id} className="home-section-title">
         {title}
       </h2>
-      {description ? (
-        <p className="text-secondary prose-width text-base leading-8">{description}</p>
-      ) : null}
-    </div>
+      {description ? <p className="home-section-desc">{description}</p> : null}
+    </header>
   );
 }

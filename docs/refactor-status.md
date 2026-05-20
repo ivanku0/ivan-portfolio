@@ -2,9 +2,59 @@
 
 Living log for the portfolio v2 refactor.
 
-**Active focus:** Structural / polish only — see [Structural backlog](#structural-backlog) below.
+**Active focus:** Structural / polish — see [Structural backlog](#structural-backlog) below.
+
+**Paused (2026-05-20):** Homepage hero + sections shipped; optional tuning (atmosphere, per-section visuals) when resumed.
 
 **Paused:** [Content strategy](#content-strategy-revisit-later) — do not pick up copy work unless explicitly requested.
+
+---
+
+## Homepage (shipped 2026-05-20)
+
+Committed to `main`. Last touched: **2026-05-20**.
+
+### Done (local)
+
+| Area | Status | Notes |
+|------|--------|--------|
+| Hero recessed well | Done | `--color-hero-well`, `.home-hero-well`, inset shadow |
+| Tile background | Done | `HeroTileField` canvas (replaces `HeroAtmosphere` glyphs); cascade on hover; right-aligned grid |
+| Hero greeting | Done | `你好, i'm ivan!` |
+| Selected Work band | Done | `HomeSection` featured variant + `structural` atmosphere |
+| How I Think panel | Done | Unified type, `HomePrinciples` cards, `organic` atmosphere |
+| Background panel | Done | Unified type, credential pills, `blend` atmosphere |
+| Section typography | Done | `.home-section-title`, `.home-section-lead`, `.home-section-body`, `text-wrap: pretty` |
+| Theme docs | Done | `docs/theme-tokens.md` updated for hero well + section surfaces |
+
+### Removed / replaced
+
+- `components/home/HeroAtmosphere.tsx` — deleted locally (glyph canvas)
+
+### New files (untracked)
+
+- `components/home/HomeHero.tsx`
+- `components/home/HeroTileField.tsx`
+- `components/home/HomeSection.tsx`
+- `components/home/SectionAtmosphere.tsx`
+- `components/home/HomePrinciples.tsx`
+
+### Not done / optional next
+
+- [x] Commit + push homepage work
+- [ ] Tune atmosphere intensity (blobs/grid) if too strong or too subtle
+- [ ] Per-section real visuals (photos/diagrams) masked into atmosphere — discussed, not built
+- [ ] Light motion on section blobs (respect `prefers-reduced-motion`)
+- [ ] Content pass on home copy in same voice as case studies (optional; partial copy already updated)
+
+### How to resume
+
+```bash
+cd /Users/ivankuo/Documents/Code/ivan-portfolio
+npm run dev   # http://localhost:3000 — kill stale PID if port in use
+```
+
+Preview: `/` — hero well + tiles, then Selected Work / How I Think / Background.
 
 ---
 
@@ -37,7 +87,7 @@ See also: [`Portfolio.context/README.md`](../content/case-studies/Portfolio.cont
 
 1. Add **`# Structured AI Outputs`** to `portfolio-case-studies.md` (Ivan’s words) and re-sync `outputs.ts`.
 2. Review **outputs** and **reconstruction** in browser; edit master doc first, then `*.ts`.
-3. Optional: refine **home** hero / “How I Think” in same voice pass as case studies.
+3. Optional: refine **home** copy in same voice pass as case studies (hero + panels updated — see [Homepage](#homepage-shipped-2026-05-20)).
 4. **Prose pass (all studies):** lighten em-dash-heavy copy in master doc + `workflows.ts`, `outputs.ts`, `reconstruction.ts` (desk-swarm draft already adjusted).
 5. **Real visuals (all studies):** screenshots or embeds per [`docs/visual-assets.md`](visual-assets.md); flip registry flags / swap components (desk-swarm: `USE_DESK_SWARM_CAPTURES` in `lib/case-study-visuals/desk-swarm.tsx`).
 
@@ -68,6 +118,7 @@ See also: [`Portfolio.context/README.md`](../content/case-studies/Portfolio.cont
 - [x] Root `app/not-found.tsx`
 - [x] Barrel imports in `app/layout.tsx`, `app/page.tsx`, `app/work/[slug]/page.tsx`, `CaseStudyTemplate`, `workflows` visual registry
 - [x] Triptych mobile layout — full-width section on small screens, `overflow-x-auto` on visual blocks in case study template
+- [x] **Homepage** — hero well, canvas tiles, section bands/panels, atmospheres (2026-05-20)
 
 ---
 
