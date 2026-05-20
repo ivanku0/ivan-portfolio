@@ -1,5 +1,7 @@
+import { mockLabelClass } from "@/components/case-study/mock/MockPrimitives";
+
 export default function WorkflowChallenge() {
-  const labelClass = "text-[0.62rem] uppercase tracking-[0.16em] text-muted";
+  const labelClass = mockLabelClass;
 
   return (
     <figure className="w-full">

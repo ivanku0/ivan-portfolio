@@ -1,60 +1,54 @@
-import { caseStudies } from "@/data/caseStudies";
-import { CaseStudyCard } from "@/components/CaseStudyCard";
-import { HeroAtmosphere } from "@/components/HeroAtmosphere";
-import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { SiteFooter } from "@/components/SiteFooter";
+import { CaseStudyCard } from "@/components/home/CaseStudyCard";
+import { HeroAtmosphere } from "@/components/home/HeroAtmosphere";
+import { RevealOnScroll } from "@/components/home/RevealOnScroll";
+import { SectionHeading } from "@/components/home/SectionHeading";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { getCaseStudyCards } from "@/content";
 
 export default function Home() {
+  const cards = getCaseStudyCards();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="relative overflow-hidden px-6 pb-12 pt-24 md:pb-18 md:pt-32">
+      <header className="relative overflow-hidden px-6 pb-12 pt-24 md:pb-16 md:pt-32">
         <HeroAtmosphere />
         <div
           aria-hidden="true"
           className="hero-readability-overlay pointer-events-none absolute inset-0 z-10"
         />
-        <div className="mx-auto max-w-6xl">
+        <div className="layout-width mx-auto">
           <section aria-label="Intro" className="relative z-20 space-y-7 md:space-y-8">
             <p className="text-muted text-xs uppercase tracking-[0.22em] md:text-sm">
               hi, I&apos;m ivan
             </p>
-            <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.02em] md:text-6xl">
-              I design AI systems grounded in human judgment, taste, and
-              real-world use.
+            <h1 className="prose-width max-w-5xl text-[length:var(--text-display)] font-semibold tracking-[-0.02em]">
+              I design AI products where speed and judgment both matter.
             </h1>
-            <p className="text-secondary max-w-3xl text-lg leading-8 md:text-xl md:leading-9">
-              Combining 10+ years of human-centered design with AI-native tools
-              to build workflows, outputs, and systems that are fast, usable,
-              and actually work.
+            <p className="text-secondary prose-width text-[length:var(--text-hero-lead)] leading-8 md:leading-9">
+              Ten years in human-centered design, now focused on AI-native workflows, structured
+              outputs, and systems people can trust in production—not just in demos.
             </p>
           </section>
         </div>
       </header>
 
       <main className="px-6 pb-36 md:pb-44">
-        <div className="mx-auto max-w-6xl space-y-32 md:space-y-48">
+        <div className="layout-width mx-auto space-y-section md:space-y-section-md">
           <RevealOnScroll>
             <section
               id="work"
               aria-labelledby="selected-work-heading"
-              className="scroll-mt-28 space-y-14 pt-28 md:space-y-16 md:pt-38"
+              className="scroll-mt-28 space-y-14 pt-28 md:space-y-16 md:pt-32"
             >
-              <div className="space-y-5">
-                <h2
-                  id="selected-work-heading"
-                  className="text-2xl font-semibold tracking-tight md:text-3xl"
-                >
-                  Selected Work
-                </h2>
-                <p className="text-secondary max-w-3xl text-base leading-8">
-                  Selected projects exploring how AI systems can be structured,
-                  made predictable, and applied to real production work.
-                </p>
-              </div>
+              <SectionHeading
+                id="selected-work-heading"
+                title="Selected Work"
+                description="Three projects on making AI systems predictable, structured, and grounded in real product constraints."
+              />
 
               <div className="grid gap-5 md:grid-cols-2 md:gap-6">
-                {caseStudies.map((caseStudy) => (
-                  <CaseStudyCard key={caseStudy.href} caseStudy={caseStudy} />
+                {cards.map((caseStudy) => (
+                  <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
                 ))}
               </div>
             </section>
@@ -64,26 +58,22 @@ export default function Home() {
             <section
               id="how-i-think"
               aria-labelledby="how-i-think-heading"
-              className="space-y-7 pt-22 md:space-y-8 md:pt-30"
+              className="space-y-7 pt-20 md:space-y-8 md:pt-28"
             >
-              <div className="space-y-5">
-                <h2
-                  id="how-i-think-heading"
-                  className="text-[1.7rem] font-semibold tracking-tight md:text-[2rem]"
-                >
-                  How I Think
-                </h2>
-                <p className="text-secondary max-w-3xl text-lg leading-8 md:text-xl md:leading-9">
-                  AI enables speed, but not judgment.
-                </p>
-                <p className="text-secondary max-w-3xl text-base leading-8 md:text-lg md:leading-9">
-                  Good products still depend on taste, decision making, and
-                  understanding real human needs. I use AI-native tools to move
-                  faster, but I rely on human-centered design to decide what
-                  should be built, how it should work, and what quality looks
-                  like in practice.
-                </p>
-              </div>
+              <SectionHeading
+                id="how-i-think-heading"
+                title="How I Think"
+                size="lg"
+              />
+              <p className="text-secondary prose-width text-[length:var(--text-hero-lead)] leading-8 md:leading-9">
+                AI makes iteration cheap. It does not make the hard calls cheap—what to build, what
+                good looks like, when to stop.
+              </p>
+              <p className="text-secondary prose-width text-base leading-8 md:text-lg md:leading-9">
+                I use AI-native tools to move faster, and human-centered design to decide what
+                deserves that speed: taste, tradeoffs, and whether the result holds up for real
+                users in real environments.
+              </p>
             </section>
           </RevealOnScroll>
 
@@ -91,30 +81,20 @@ export default function Home() {
             <section
               id="background"
               aria-labelledby="background-heading"
-              className="space-y-6 pt-18 md:space-y-7 md:pt-24"
+              className="space-y-6 pt-16 md:space-y-7 md:pt-24"
             >
-              <div className="space-y-4">
-                <h2
-                  id="background-heading"
-                  className="text-xl font-medium tracking-tight md:text-2xl"
-                >
-                  Background
-                </h2>
-                <p className="text-secondary max-w-3xl text-base leading-8">
-                  I&apos;ve spent 10+ years designing products across enterprise,
-                  federal, and emerging technology environments. My work has
-                  spanned research, facilitation, interaction design, and
-                  systems thinking, and now increasingly focuses on AI-native
-                  products, workflows, and design infrastructure.
-                </p>
-                <ul className="text-secondary list-disc space-y-2 pl-5 text-sm leading-7 marker:text-[var(--color-text-muted)] md:text-[0.95rem]">
-                  <li>LIGER AI platform</li>
-                  <li>Federal systems including VA and USPS</li>
-                  <li>
-                    Consulting environments including KPMG and Booz Allen
-                  </li>
-                </ul>
-              </div>
+              <SectionHeading id="background-heading" title="Background" size="md" />
+              <p className="text-secondary prose-width text-base leading-8">
+                I&apos;ve spent 10+ years designing products across enterprise, federal, and
+                emerging technology environments—research, facilitation, interaction design, and
+                systems thinking, with increasing focus on AI-native products and design
+                infrastructure.
+              </p>
+              <ul className="text-secondary list-disc space-y-2 pl-5 text-sm leading-7 marker:text-muted md:text-[0.95rem]">
+                <li>LIGER AI platform</li>
+                <li>Federal systems including VA and USPS</li>
+                <li>Consulting environments including KPMG and Booz Allen</li>
+              </ul>
             </section>
           </RevealOnScroll>
           <RevealOnScroll>

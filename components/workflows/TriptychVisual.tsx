@@ -15,11 +15,15 @@ const structureRows: StructureGroup[] = [
   },
 ];
 
+import {
+  mockActiveShellClass,
+  mockLabelClass,
+  mockLayerTitleClass,
+} from "@/components/case-study/mock/MockPrimitives";
+
 export default function TriptychVisual() {
-  const activeShell =
-    "border border-[var(--color-accent-secondary)]/38 bg-[var(--color-surface-alt)]/62";
-  const layerLabelClass =
-    "text-[0.62rem] uppercase tracking-[0.14em] text-muted";
+  const activeShell = mockActiveShellClass;
+  const layerLabelClass = mockLabelClass;
 
   return (
     <figure className="max-w-[82ch] space-y-11 md:space-y-14">
@@ -28,7 +32,7 @@ export default function TriptychVisual() {
             <header className="border-b border-[var(--color-border-subtle)]/24 px-3 py-2.5">
               <div className="space-y-1">
                 <p className={layerLabelClass}>Layer 1</p>
-                <h3 className="text-[0.73rem] font-semibold uppercase tracking-[0.16em] text-foreground/92">
+                <h3 className={mockLayerTitleClass}>
                   Structure
                 </h3>
                 <p className="text-[0.68rem] text-muted">
@@ -77,7 +81,7 @@ export default function TriptychVisual() {
             <header className="border-b border-[var(--color-border-subtle)]/24 px-3 py-2.5">
               <div className="space-y-1">
                 <p className={layerLabelClass}>Layer 2</p>
-                <h3 className="text-[0.73rem] font-semibold uppercase tracking-[0.16em] text-foreground/92">
+                <h3 className={mockLayerTitleClass}>
                   Execution
                 </h3>
                 <p className="text-[0.68rem] text-muted">
@@ -110,7 +114,7 @@ export default function TriptychVisual() {
             <header className="border-b border-[var(--color-border-subtle)]/24 px-3 py-2.5">
               <div className="space-y-1">
                 <p className={layerLabelClass}>Layer 3</p>
-                <h3 className="text-[0.73rem] font-semibold uppercase tracking-[0.16em] text-foreground/92">
+                <h3 className={mockLayerTitleClass}>
                   Visibility
                 </h3>
                 <p className="text-[0.68rem] text-muted">

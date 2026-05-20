@@ -17,37 +17,45 @@ Defined under `:root`:
 - `--color-accent-secondary`
 - `--color-accent-deep`
 
-These power most UI styles via semantic classes and utility mappings.
+Tailwind v4 maps these via `@theme inline` as `background`, `foreground`, `surface-raised`, `surface-alt`, `border-subtle`, `accent`, etc.
 
 ## RGB companion tokens (alpha composition)
 
-Also defined in `:root` for gradients/canvas effects:
-
 - `--color-page-bg-rgb`
+- `--color-surface-raised-rgb`
+- `--color-surface-alt-rgb`
 - `--color-muted-rgb`
+- `--color-accent-primary-rgb`
 - `--color-accent-secondary-rgb`
 - `--color-border-subtle-rgb`
 
-Use these whenever you need transparency control in gradients or canvas drawing.
+Use `rgb(var(--color-*-rgb) / 0.28)` patterns instead of hardcoded rgba in components.
+
+## Typography and spacing
+
+- `--text-display`, `--text-hero-lead`, `--text-section`, `--text-section-sm`, `--text-body`, `--text-ui-label`, `--text-ui-caption`
+- `--space-section-y`, `--space-section-y-md`, `--space-block-y`, `--space-block-y-md`
+- Utility classes: `.prose-width` (~65ch), `.layout-width` (72rem max)
+
+## Shadows
+
+- `--shadow-card`, `--shadow-card-hover` — used by `.card-surface`
+
+## Light mock chrome exception
+
+`components/workflows/OriginalWorkflowModel.tsx` uses `--color-mock-light-*` tokens for intentional light “app screenshot” contrast against the dark marketing shell. Do not replace with raw `slate-*` when updating that component.
 
 ## Where tokens are used
 
-- `app/globals.css`
-  - body colors
-  - links
-  - card surfaces
-  - section dividers
-  - hero readability overlay (`.hero-readability-overlay`)
-- `components/HeroAtmosphere.tsx`
-  - reads RGB tokens from `:root` via `getComputedStyle`
-  - uses tokenized colors for glyph field, ambient glow, and cursor blinks
+- `app/globals.css` — body, links, cards, hero overlay, reveal animation, splash keyframes
+- `components/home/HeroAtmosphere.tsx` — canvas reads RGB tokens via `getComputedStyle`
+- `components/case-study/mock/MockPrimitives.tsx` — shared mock UI class strings
+- `components/workflows/*` — triptych and workflow diagrams
 
 ## Updating color schemes
 
-To try a new palette:
-
 1. Update token values in `:root` (`app/globals.css`)
 2. Keep semantic names the same
-3. Adjust only alpha/intensity values if needed for readability/motion balance
+3. Adjust alpha/intensity only if needed for readability or motion balance
 
-No component-level color rewrites should be required when tokens are kept consistent.
+Marketing and mock UIs should stay on tokens; only `OriginalWorkflowModel` uses the documented light exception.

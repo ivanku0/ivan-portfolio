@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { NavLink } from "./NavLink";
+import { NavLink } from "@/components/layout/NavLink";
 
 type NavItem = {
   label: string;
@@ -10,10 +10,10 @@ type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Work", href: "/#work" },
-  { label: "Resume", href: "/public/Ivan_Kuo_Resume.pdf", openInNewTab: true },
+  { label: "Resume", href: "/Ivan_Kuo_Resume.pdf", openInNewTab: true },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/placeholder",
+    href: "https://www.linkedin.com/in/kuoivan",
     openInNewTab: true,
   },
   { label: "Contact", href: "/#contact" },
@@ -22,7 +22,7 @@ const NAV_ITEMS: NavItem[] = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-[rgb(var(--color-page-bg-rgb)_/_0.48)] backdrop-blur-md supports-[backdrop-filter]:bg-[rgb(var(--color-page-bg-rgb)_/_0.2)]">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-4 md:py-5">
+      <div className="layout-width mx-auto flex w-full items-center justify-between gap-4 px-6 py-4 md:py-5">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:text-secondary"
