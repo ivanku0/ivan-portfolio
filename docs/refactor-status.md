@@ -31,8 +31,9 @@ Living log for the portfolio v2 refactor. Case study copy is edited in `content/
 - [x] Barrel exports: `components/{layout,home,case-study,workflows}/index.ts`
 - [ ] Replace `PlaceholderDiagram` with real assets for outputs/reconstruction (swap keys in `placeholders.tsx` when ready)
 
-### Content (paused)
+### Content
 
-- [ ] Review workflows copy in browser; commit when approved
-- [ ] Add context markdown for **outputs** and **reconstruction**
-- [ ] Rewrite `outputs.ts` and `reconstruction.ts` from author context
+- [x] Workflows copy from `Portfolio.context` — approved in browser
+- [x] Outputs copy + dedicated `OutputsVisual` diagrams (draft; add context file to refine)
+- [ ] Add context markdown for **reconstruction**
+- [ ] Rewrite `reconstruction.ts` from author context

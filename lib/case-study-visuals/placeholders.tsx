@@ -1,32 +1,24 @@
 import { PlaceholderDiagram } from "@/components/case-study/PlaceholderDiagram";
 import type { CaseStudyVisualSlot } from "@/lib/case-study-visuals/types";
 
-type PlaceholderKey =
-  | "outputs-overview"
-  | "outputs-challenge"
-  | "outputs-approach"
-  | "outputs-outcome"
+type ReconstructionPlaceholderKey =
   | "reconstruction-overview"
   | "reconstruction-challenge"
   | "reconstruction-approach"
   | "reconstruction-outcome";
 
 const PLACEHOLDER_CONFIG: Record<
-  PlaceholderKey,
+  ReconstructionPlaceholderKey,
   { title: string; variant: "flat" | "hierarchy" | "pipeline" | "grid" }
 > = {
-  "outputs-overview": { title: "Unstructured output", variant: "flat" },
-  "outputs-challenge": { title: "Formatting gap", variant: "hierarchy" },
-  "outputs-approach": { title: "Workflow to document", variant: "pipeline" },
-  "outputs-outcome": { title: "Structured output", variant: "hierarchy" },
   "reconstruction-overview": { title: "Production interface", variant: "grid" },
   "reconstruction-challenge": { title: "No system", variant: "flat" },
   "reconstruction-approach": { title: "Reconstruction pipeline", variant: "pipeline" },
   "reconstruction-outcome": { title: "Reusable assets", variant: "grid" },
 };
 
-export function resolvePlaceholderVisual(
-  key: PlaceholderKey,
+export function resolveReconstructionPlaceholder(
+  key: ReconstructionPlaceholderKey,
   labels?: { label: string; text: string },
 ): CaseStudyVisualSlot {
   const config = PLACEHOLDER_CONFIG[key];
@@ -40,6 +32,8 @@ export function resolvePlaceholderVisual(
   };
 }
 
-export function isPlaceholderKey(key: string): key is PlaceholderKey {
+export function isReconstructionPlaceholderKey(
+  key: string,
+): key is ReconstructionPlaceholderKey {
   return key in PLACEHOLDER_CONFIG;
 }

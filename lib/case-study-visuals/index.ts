@@ -1,7 +1,8 @@
 import type { VisualKey } from "@/content/types";
+import { isOutputsVisualKey, resolveOutputsVisual } from "@/lib/case-study-visuals/outputs";
 import {
-  isPlaceholderKey,
-  resolvePlaceholderVisual,
+  isReconstructionPlaceholderKey,
+  resolveReconstructionPlaceholder,
 } from "@/lib/case-study-visuals/placeholders";
 import type { CaseStudyVisualSlot } from "@/lib/case-study-visuals/types";
 import {
@@ -24,11 +25,15 @@ export function resolveVisual(
     return resolveWorkflowsVisual(key as WorkflowsVisualKey, labels);
   }
 
-  if (isPlaceholderKey(key)) {
-    return resolvePlaceholderVisual(key, labels);
+  if (isOutputsVisualKey(key)) {
+    return resolveOutputsVisual(key, labels);
   }
 
-  return resolvePlaceholderVisual("outputs-overview", labels);
+  if (isReconstructionPlaceholderKey(key)) {
+    return resolveReconstructionPlaceholder(key, labels);
+  }
+
+  return resolveReconstructionPlaceholder("reconstruction-overview", labels);
 }
 
 export type { CaseStudyVisualSlot } from "@/lib/case-study-visuals/types";
