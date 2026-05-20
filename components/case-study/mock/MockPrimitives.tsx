@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-/** Shared class strings for in-product mock UIs */
+/** Shared class strings for in-product mock UIs (dark shell) */
 export const mockLabelClass =
   "text-[length:var(--text-ui-label)] uppercase tracking-[0.14em] text-muted";
 
@@ -12,6 +12,13 @@ export const mockPanelClass =
 
 export const mockActiveShellClass =
   "border border-accent-secondary/38 bg-surface-alt/62";
+
+export const mockFocusStrokeClass =
+  "border border-solid border-accent-secondary/46 ring-1 ring-accent-secondary/12 ring-inset";
+
+export const mockPageInsetClass = "rounded-md border border-border-subtle/28 bg-background/34";
+
+export const mockDividerClass = "border-border-subtle/22";
 
 type MockPanelProps = {
   children: ReactNode;

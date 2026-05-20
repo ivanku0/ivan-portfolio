@@ -6,37 +6,37 @@ export const workflowsCaseStudy: CaseStudyContent = {
   card: {
     title: "Predictable AI Workflows",
     description:
-      "Redesigned a step-based AI writing flow so teams could see structure, execution, and the growing report in one place—instead of guessing what each run would produce.",
+      "Modernized a flagship enterprise AI workflow product—from a programmable prompt interface into a triptych model where structure, execution, and document output are visible as users work.",
   },
   page: {
     title: "Predictable AI Workflows",
     subtitle:
-      "For a B2B document AI product, I led design on a triptych model that separates workflow structure, step execution, and live document visibility.",
+      "Led design on a triptych interaction model for an enterprise document AI platform: making step-based workflows legible to business users and solution engineers without turning them into prompt engineers.",
     hook: "AI workflows fail when users cannot predict what will happen before they run.",
     metaDescription:
-      "Case study on redesigning AI workflow UX with a triptych model for structure, execution, and document visibility.",
+      "Case study on redesigning enterprise AI workflow UX with a triptych model for structure, execution, and document visibility.",
   },
   sections: {
     overview: [
-      "Users could complete each step, but they could not predict the final report. Prompting, generation, and editing happened in one execution surface while the assembled document stayed invisible during the run.",
-      "I led design and definition of the triptych interaction model—Structure, Execution, and Visibility—and shipped interaction diagrams, high-fidelity prototypes, and research synthesis with product and engineering.",
-      "The gap was practical: teams wanted fast AI-assisted writing, but they also needed to know when a step was done, which section updated, and how the artifact was taking shape.",
+      "The product had been in production for over a year and was becoming a flagship capability shown to clients—but it still behaved more like a programmable prompt interface than a document creation tool. Users could run chained steps, yet non-technical enterprise users struggled to understand what the system was building or how the final report would assemble.",
+      "I led the design and definition of the triptych interaction model in close collaboration with product and engineering: competitive analysis, research synthesis, interaction modeling, flows and prototypes, critiques and usability testing, and iteration on feasibility with a diverse audience—from business users to technical solution engineers.",
+      "The work had to modernize the experience without abandoning a year of production architecture and familiar patterns, while the product was still pre-MVP in places and actively redefining direction.",
     ],
     challenge: [
-      "The product was organized into steps, but meaningful work lived in a single execution pane. Users prompted, generated, and edited in place without seeing how output mapped to report sections.",
-      "State was hard to inspect. People inferred completion, commitment, and section ownership—even when generation worked, they were unsure what would happen next.",
-      "The challenge visual shows interaction concentrated in Execution while the Document pane sits detached: step labels were visible, but the link between actions and the artifact was not.",
+      "Users could complete workflow steps, but they were not confident in what the system was producing. Prompting, editing, and generation all happened in one execution surface; outcomes felt implicit and hard to reason about.",
+      "The legacy model was a two-pane flow: users progressed linearly through steps with little visibility into how outputs accumulated into a coherent document. State was inferred—completion, commitment, and section ownership were unclear even when generation worked.",
+      "The challenge was not “users don’t get it.” It was a systems problem: structure, execution, and document assembly were collapsed into an overloaded surface, so people could navigate the workflow without understanding the artifact being produced.",
     ],
     approach: [
-      "Usability testing surfaced the turning point: participants completed steps correctly but could not explain how the document was being built.",
-      "I reframed the model into three layers. Structure defines ordered steps. Execution holds prompt authoring and refinement. Visibility shows the accumulating artifact as sections commit.",
-      "When a step is saved, its result lands in the matching section—state becomes observable instead of inferred. The triptych visual shows each commit updating the live document.",
-      "We iterated through multiple rounds of testing and stakeholder review before the model informed product direction.",
+      "Usability testing made the gap concrete: participants completed steps correctly but could not explain how the document was being built. That became the design brief—repair the mental model, not add more prompts.",
+      "I reframed the product into three layers. Structure defines ordered steps and grouping. Execution holds prompt authoring, generation, and refinement. Visibility shows the accumulating document as each step commits—so progress is observable, not guessed.",
+      "We ran multiple rounds of critique, testing, and stakeholder alignment while engineering weighed scalability against legacy patterns. The goal was an extensible interaction model, not a one-off screen refresh.",
+      "To communicate the model in portfolio and review settings, I directed an interactive prototype around resume analysis—a use case people understand without proprietary enterprise content. It simulates step progression, prompt runs, saved state, and live document assembly, including completion flows that reinforce confidence.",
     ],
     outcome: [
-      "The work replaced an implicit prompt chain with observable progress: when a step saves, which section updates, and how the report assembles.",
-      "The triptych became a shared reference for discussing state, surface ownership, and expected behavior during execution—useful beyond design reviews.",
-      "The experience became accessible to more users, reduced reliance on prompt expertise, and aligned with how enterprise teams review document workflows.",
+      "After the redesign direction, users could see prompts committed into visible document sections step by step. Structure, configuration, and output were separated into distinct layers, so each action had a clear relationship to the artifact.",
+      "The triptych became a shared language across product, engineering, and stakeholders—for state, surface ownership, and what “done” means at each step. That reduced reliance on prompt expertise and made the flagship workflow easier to demo and defend to clients.",
+      "The through-line for this work: diagnose broken mental models and redesign systems around how people actually think and work—then translate ambiguous AI behavior into a product model teams can build on.",
     ],
   },
   visuals: {
@@ -48,19 +48,19 @@ export const workflowsCaseStudy: CaseStudyContent = {
   visualLabels: {
     overview: {
       label: "Original model",
-      text: "Baseline workflow UI before the triptych redesign: step-by-step generation with state and assembly remaining implicit.",
+      text: "Legacy two-pane workflow: prompting and generation in one surface, with document assembly implicit and detached from execution.",
     },
     challenge: {
       label: "Challenge",
-      text: "Workflows are step-based, but meaningful work happens inside a single execution surface.",
+      text: "Structure, execution, and output collapsed—users could move through steps without seeing how the artifact was produced.",
     },
     approach: {
       label: "Structure → Execution → Visibility",
-      text: "Separating structure, execution, and system visibility so each step is inspectable and predictable.",
+      text: "Three layers so each step is inspectable: schema on the left, configuration in the center, live document on the right.",
     },
     outcome: {
-      label: "In product",
-      text: "The triptych applied in a working interface—each step generates, commits, and updates visible system state.",
+      label: "In product (prototype)",
+      text: "Interactive resume-analysis flow demonstrating run, save, section commit, and progress—abstracted from proprietary enterprise content.",
     },
   },
 };

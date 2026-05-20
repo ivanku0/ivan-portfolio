@@ -28,8 +28,8 @@ export default function TriptychVisual() {
   return (
     <figure className="max-w-[82ch] space-y-11 md:space-y-14">
       <div className="grid grid-cols-1 gap-3 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:gap-4">
-        <section className="rounded-xl border border-[var(--color-border-subtle)]/30 bg-[var(--color-surface-raised)]/40">
-            <header className="border-b border-[var(--color-border-subtle)]/24 px-3 py-2.5">
+        <section className="rounded-xl border border-border-subtle/30 bg-surface-raised/40">
+            <header className="border-b border-border-subtle/24 px-3 py-2.5">
               <div className="space-y-1">
                 <p className={layerLabelClass}>Layer 1</p>
                 <h3 className={mockLayerTitleClass}>
@@ -46,7 +46,7 @@ export default function TriptychVisual() {
                   key={row.parent}
                   className={
                     row.children
-                      ? "space-y-1 rounded-md border border-[var(--color-border-subtle)]/22 bg-[var(--color-page-bg)]/22 p-1.5"
+                      ? "space-y-1 rounded-md border border-border-subtle/22 bg-background/22 p-1.5"
                       : "space-y-1"
                   }
                 >
@@ -74,11 +74,11 @@ export default function TriptychVisual() {
           </section>
 
           <div aria-hidden="true" className="mx-auto hidden h-full w-3 items-center justify-center md:flex">
-            <span className="h-16 w-px rounded-full bg-[var(--color-border-subtle)]/55" />
+            <span className="h-16 w-px rounded-full bg-border-subtle/55" />
           </div>
 
-          <section className="rounded-xl border border-[var(--color-border-subtle)]/28 bg-[var(--color-surface-raised)]/42">
-            <header className="border-b border-[var(--color-border-subtle)]/24 px-3 py-2.5">
+          <section className="rounded-xl border border-border-subtle/28 bg-surface-raised/42">
+            <header className="border-b border-border-subtle/24 px-3 py-2.5">
               <div className="space-y-1">
                 <p className={layerLabelClass}>Layer 2</p>
                 <h3 className={mockLayerTitleClass}>
@@ -90,13 +90,13 @@ export default function TriptychVisual() {
               </div>
             </header>
             <div className="space-y-2.5 px-3 py-3.5">
-              <div className="rounded-md border border-[var(--color-border-subtle)]/28 bg-[var(--color-page-bg)]/32 px-2.5 py-2">
+              <div className="rounded-md border border-border-subtle/28 bg-background/32 px-2.5 py-2">
                 <p className="text-[0.68rem] uppercase tracking-[0.12em] text-muted">Input</p>
                 <p className="mt-1 text-[0.76rem] leading-5 text-secondary">
                   Synthesize prior steps into a concise resume summary aligned to the target role.
                 </p>
               </div>
-              <div className="border-t border-[var(--color-border-subtle)]/24" />
+              <div className="border-t border-border-subtle/24" />
               <div className={`${activeShell} rounded-md px-2.5 py-2`}>
                 <p className="text-[0.68rem] uppercase tracking-[0.12em] text-muted">Output</p>
                 <p className="mt-1 text-[0.76rem] leading-5 text-foreground">
@@ -107,11 +107,11 @@ export default function TriptychVisual() {
           </section>
 
           <div aria-hidden="true" className="mx-auto hidden h-full w-3 items-center justify-center md:flex">
-            <span className="h-16 w-px rounded-full bg-[var(--color-border-subtle)]/55" />
+            <span className="h-16 w-px rounded-full bg-border-subtle/55" />
           </div>
 
-          <section className="rounded-xl border border-[var(--color-border-subtle)]/34 bg-[var(--color-surface-alt)]/44">
-            <header className="border-b border-[var(--color-border-subtle)]/24 px-3 py-2.5">
+          <section className="rounded-xl border border-border-subtle/34 bg-surface-alt/44">
+            <header className="border-b border-border-subtle/24 px-3 py-2.5">
               <div className="space-y-1">
                 <p className={layerLabelClass}>Layer 3</p>
                 <h3 className={mockLayerTitleClass}>
@@ -123,11 +123,11 @@ export default function TriptychVisual() {
               </div>
             </header>
             <div className="space-y-2.5 px-3 py-3.5">
-              <div className="rounded-lg border border-[var(--color-border-subtle)]/28 bg-[var(--color-page-bg)]/42 px-2.5 py-2.5">
+              <div className="rounded-lg border border-border-subtle/28 bg-background/42 px-2.5 py-2.5">
                 <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 1</p>
                 <p className="mt-1 text-[0.75rem] text-secondary">Candidate baseline established</p>
               </div>
-              <div className="rounded-lg border border-[var(--color-border-subtle)]/28 bg-[var(--color-page-bg)]/42 px-2.5 py-2.5">
+              <div className="rounded-lg border border-border-subtle/28 bg-background/42 px-2.5 py-2.5">
                 <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 2</p>
                 <p className="mt-1 text-[0.75rem] text-secondary">Signals extracted and structured</p>
               </div>
@@ -135,7 +135,7 @@ export default function TriptychVisual() {
                 <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 3</p>
                 <p className="mt-1 text-[0.75rem] text-foreground">Interpretation and positioning defined</p>
               </div>
-              <div className="rounded-lg border border-dashed border-[var(--color-border-subtle)]/20 bg-[var(--color-page-bg)]/18 px-2.5 py-2.5">
+              <div className="rounded-lg border border-dashed border-border-subtle/20 bg-background/18 px-2.5 py-2.5">
                 <p className="text-[0.66rem] uppercase tracking-[0.12em] text-muted">Section 4</p>
                 <p className="mt-1 text-[0.75rem] text-muted">Summary generated and ready for export</p>
               </div>
@@ -143,7 +143,7 @@ export default function TriptychVisual() {
           </section>
       </div>
 
-      <div className="mx-auto w-full max-w-[68ch] rounded-xl bg-[var(--color-surface-raised)]/14 p-5 md:p-6">
+      <div className="mx-auto w-full max-w-[68ch] rounded-xl bg-surface-raised/14 p-5 md:p-6">
         <figcaption className="max-w-[70ch] text-[0.74rem] leading-6 text-foreground/72 md:text-[0.8rem]">
           Externalizing system state transforms workflows from opaque generation into inspectable systems—where each
           step contributes to a visible, cumulative output.

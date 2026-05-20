@@ -61,6 +61,12 @@
   --color-accent: var(--color-accent-primary);
   --color-accent-secondary: var(--color-accent-secondary);
   --color-accent-deep: var(--color-accent-deep);
+  --color-mock-light-bg: var(--color-mock-light-bg);
+  --color-mock-light-surface: var(--color-mock-light-surface);
+  --color-mock-light-border: var(--color-mock-light-border);
+  --color-mock-light-text: var(--color-mock-light-text);
+  --color-mock-light-muted: var(--color-mock-light-muted);
+  --color-mock-light-accent: var(--color-mock-light-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --spacing-section: var(--space-section-y);

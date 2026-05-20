@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# local editor / duplicate assets (canonical resume is public/Ivan_Kuo_Resume.pdf)
+*.code-workspace
+/Ivan_Kuo_Resume.pdf
+
 # debug
 npm-debug.log*
 yarn-debug.log*

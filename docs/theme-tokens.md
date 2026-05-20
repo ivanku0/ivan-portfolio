@@ -41,9 +41,11 @@ Use `rgb(var(--color-*-rgb) / 0.28)` patterns instead of hardcoded rgba in compo
 
 - `--shadow-card`, `--shadow-card-hover` — used by `.card-surface`
 
-## Light mock chrome exception
+## Light mock chrome (`--color-mock-light-*`)
 
-`components/workflows/OriginalWorkflowModel.tsx` uses `--color-mock-light-*` tokens for intentional light “app screenshot” contrast against the dark marketing shell. Do not replace with raw `slate-*` when updating that component.
+Mapped in `@theme inline` as `mock-light-bg`, `mock-light-surface`, `mock-light-border`, `mock-light-text`, `mock-light-muted`, `mock-light-accent`.
+
+Used by `components/workflows/OriginalWorkflowModel.tsx` for intentional light “app screenshot” contrast against the dark marketing shell.
 
 ## Where tokens are used
 

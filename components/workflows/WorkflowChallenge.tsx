@@ -11,12 +11,12 @@ export default function WorkflowChallenge() {
             <div className="grid min-h-[22rem] grid-cols-1 gap-3 md:grid-cols-[1fr_auto_1.7fr_auto_0.9fr] md:items-start md:gap-8">
               <div className="space-y-2.5 md:min-h-[20rem]">
                 <p className={labelClass}>Structure</p>
-                <section className="rounded-xl border border-[var(--color-border-subtle)]/26 bg-[var(--color-surface-raised)]/34 px-3 py-4 md:min-h-[16rem]">
+                <section className="rounded-xl border border-border-subtle/26 bg-surface-raised/34 px-3 py-4 md:min-h-[16rem]">
                   <div className="space-y-1.5">
                     {["Step 1", "Step 2", "Step 3"].map((step) => (
                       <div
                         key={step}
-                        className="rounded-md border border-[var(--color-border-subtle)]/22 bg-[var(--color-page-bg)]/22 px-2.5 py-1.5 text-[0.74rem] text-secondary"
+                        className="rounded-md border border-border-subtle/22 bg-background/22 px-2.5 py-1.5 text-[0.74rem] text-secondary"
                       >
                         {step}
                       </div>
@@ -31,8 +31,8 @@ export default function WorkflowChallenge() {
 
               <div className="relative space-y-2.5 md:min-h-[20rem]">
                 <p className={labelClass}>Execution</p>
-                <section className="rounded-xl border border-[var(--color-border-subtle)]/28 bg-[var(--color-surface-alt)]/42 px-3 py-4 shadow-[0_0_0_1px_rgba(var(--color-accent-secondary-rgb),0.08)] md:min-h-[16rem]">
-                  <div className="rounded-lg border border-[var(--color-border-subtle)]/22 bg-[var(--color-page-bg)]/16 px-2.5 py-2">
+                <section className="rounded-xl border border-border-subtle/28 bg-surface-alt/42 px-3 py-4 ring-1 ring-accent-secondary/8 md:min-h-[16rem]">
+                  <div className="rounded-lg border border-border-subtle/22 bg-background/16 px-2.5 py-2">
                     {[
                       { label: "Prompt", cls: "w-[91%]" },
                       { label: "Controls", cls: "mt-1.5 w-[86%] ml-1" },
@@ -41,7 +41,7 @@ export default function WorkflowChallenge() {
                     ].map((item) => (
                       <div
                         key={item.label}
-                        className={`rounded-md border border-[var(--color-border-subtle)]/24 bg-[var(--color-page-bg)]/24 px-2.5 py-1.5 text-[0.74rem] text-secondary ${item.cls}`}
+                        className={`rounded-md border border-border-subtle/24 bg-background/24 px-2.5 py-1.5 text-[0.74rem] text-secondary ${item.cls}`}
                       >
                         {item.label}
                       </div>
@@ -59,8 +59,8 @@ export default function WorkflowChallenge() {
 
               <div className="space-y-2.5 md:min-h-[20rem]">
                 <p className={labelClass}>Document</p>
-                <section className="scale-[0.94] rounded-xl border border-dashed border-[var(--color-border-subtle)]/26 bg-[var(--color-page-bg)]/10 px-3 py-3.5 md:min-h-[16rem]">
-                  <div className="rounded-md border border-[var(--color-border-subtle)]/16 bg-[var(--color-page-bg)]/8 px-2.5 py-2 text-[0.72rem] text-secondary">
+                <section className="scale-[0.94] rounded-xl border border-dashed border-border-subtle/26 bg-background/10 px-3 py-3.5 md:min-h-[16rem]">
+                  <div className="rounded-md border border-border-subtle/16 bg-background/8 px-2.5 py-2 text-[0.72rem] text-secondary">
                     <p>Final document</p>
                     <p className="text-[0.66rem] text-secondary/95">assembled after execution</p>
                   </div>

@@ -13,6 +13,10 @@ import {
 } from "@/components/workflows/triptych/particles";
 import type { Step } from "@/components/workflows/triptych/types";
 import {
+  mockActiveShellClass,
+  mockFocusStrokeClass,
+} from "@/components/case-study/mock/MockPrimitives";
+import {
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -41,17 +45,9 @@ export default function TriptychProduct() {
     };
   }, []);
 
-  /** Editor / prompt output — active step context */
-  const activeShell =
-    "border border-[var(--color-accent-secondary)]/36 bg-[var(--color-surface-alt)]/66";
-
-  /**
-   * Shared “active focus” language: Steps list + Document Preview (not identical to `activeShell`,
-   * but same stroke weight family for cross-pane continuity).
-   */
-  const focusStroke =
-    "border-[var(--color-accent-secondary)]/46 border border-solid ring-1 ring-[var(--color-accent-secondary)]/12 ring-inset";
-  const stepRowActiveShell = `${focusStroke} bg-[var(--color-surface-alt)]/66`;
+  const activeShell = mockActiveShellClass;
+  const focusStroke = mockFocusStrokeClass;
+  const stepRowActiveShell = `${mockFocusStrokeClass} bg-surface-alt/66`;
 
   const handleStartWorkflow = useCallback(() => {
     setWorkflowStarted(true);
@@ -183,10 +179,10 @@ export default function TriptychProduct() {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-[108ch] rounded-2xl border border-[var(--color-border-subtle)]/34 bg-[rgb(var(--color-page-bg-rgb)_/_0.42)] p-4 md:p-5">
+    <section className="mx-auto w-full max-w-[108ch] rounded-2xl border border-border-subtle/34 bg-background/42 p-4 md:p-5">
       <div className="grid grid-cols-1 gap-3 md:min-h-[38rem] md:grid-cols-[0.9fr_auto_2.45fr_auto_1.3fr] md:gap-4">
         <aside
-          className={`relative overflow-hidden rounded-xl border border-[var(--color-border-subtle)]/30 bg-[var(--color-surface-raised)]/44 ${
+          className={`relative overflow-hidden rounded-xl border border-border-subtle/30 bg-surface-raised/44 ${
             !workflowStarted ? "pointer-events-none" : ""
           }`}
         >
@@ -195,7 +191,7 @@ export default function TriptychProduct() {
               !workflowStarted ? "blur-[3px] opacity-[0.38] saturate-[0.75] contrast-[0.92]" : ""
             }
           >
-            <header className="flex items-center justify-between border-b border-[var(--color-border-subtle)]/22 px-3 py-2.5">
+            <header className="flex items-center justify-between border-b border-border-subtle/22 px-3 py-2.5">
               <div className="flex items-center gap-1.5">
                 <span className="text-[0.62rem] text-muted">▾</span>
                 <h3 className="text-[0.73rem] font-semibold text-foreground/92">Steps</h3>
@@ -223,13 +219,13 @@ export default function TriptychProduct() {
           {!workflowStarted ? <StartAmbientSideParticles seed={11} /> : null}
         </aside>
 
-        <div aria-hidden="true" className="hidden w-px bg-[var(--color-border-subtle)]/34 md:block" />
+        <div aria-hidden="true" className="hidden w-px bg-border-subtle/34 md:block" />
 
         <section
-          className={`flex min-h-0 flex-col rounded-xl border border-[var(--color-border-subtle)]/30 ${
+          className={`flex min-h-0 flex-col rounded-xl border border-border-subtle/30 ${
             !workflowStarted
-              ? "bg-[rgb(var(--color-page-bg-rgb)_/_0.94)]"
-              : "bg-[var(--color-surface-raised)]/48"
+              ? "bg-background/94"
+              : "bg-surface-raised/48"
           }`}
         >
           {!workflowStarted ? (
@@ -257,7 +253,7 @@ export default function TriptychProduct() {
             </div>
           ) : allWorkflowStepsSaved ? (
             <div className="relative flex min-h-0 flex-1 flex-col">
-              <header className="relative z-[3] shrink-0 border-b border-[var(--color-border-subtle)]/22 bg-[var(--color-surface-raised)]/48 px-3 py-2.5">
+              <header className="relative z-[3] shrink-0 border-b border-border-subtle/22 bg-surface-raised/48 px-3 py-2.5">
                 <div className="flex items-center justify-between">
                   <p className="text-[0.73rem] font-semibold text-foreground/92">Configuration</p>
                   <span className="text-[0.62rem] text-muted">⋮</span>
@@ -282,30 +278,30 @@ export default function TriptychProduct() {
                     ].map((m) => (
                       <div
                         key={m.label}
-                        className="rounded-lg border border-[var(--color-border-subtle)]/26 bg-[var(--color-page-bg)]/28 px-2.5 py-2"
+                        className="rounded-lg border border-border-subtle/26 bg-background/28 px-2.5 py-2"
                       >
                         <p className="text-[0.58rem] uppercase tracking-[0.1em] text-muted">{m.label}</p>
                         <p className="mt-1 tabular-nums text-[0.78rem] font-medium text-foreground/92">{m.value}</p>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-auto flex flex-col gap-2 border-t border-[var(--color-border-subtle)]/18 pt-5">
+                  <div className="mt-auto flex flex-col gap-2 border-t border-border-subtle/18 pt-5">
                     <button
                       type="button"
-                      className="w-full rounded-md border border-[var(--color-accent-secondary)]/38 bg-[var(--color-surface-alt)]/58 px-3 py-2 text-left text-[0.68rem] font-medium text-foreground transition-colors hover:bg-[var(--color-surface-alt)]/72"
+                      className="w-full rounded-md border border-accent-secondary/38 bg-surface-alt/58 px-3 py-2 text-left text-[0.68rem] font-medium text-foreground transition-colors hover:bg-surface-alt/72"
                     >
                       Export Document
                     </button>
                     <button
                       type="button"
-                      className="w-full rounded-md border border-[var(--color-border-subtle)]/34 bg-[var(--color-page-bg)]/22 px-3 py-2 text-left text-[0.66rem] font-medium text-secondary transition-colors hover:text-foreground"
+                      className="w-full rounded-md border border-border-subtle/34 bg-background/22 px-3 py-2 text-left text-[0.66rem] font-medium text-secondary transition-colors hover:text-foreground"
                     >
                       Edit Formatting
                     </button>
                     <button
                       type="button"
                       onClick={handleResetWorkflow}
-                      className="w-full rounded-md px-3 py-1.5 text-left text-[0.64rem] text-muted transition-colors hover:bg-[var(--color-page-bg)]/20 hover:text-secondary"
+                      className="w-full rounded-md px-3 py-1.5 text-left text-[0.64rem] text-muted transition-colors hover:bg-background/20 hover:text-secondary"
                     >
                       Run Workflow Again
                     </button>
@@ -321,7 +317,7 @@ export default function TriptychProduct() {
             </div>
           ) : (
             <>
-              <header className="space-y-2 border-b border-[var(--color-border-subtle)]/22 px-3 py-2.5">
+              <header className="space-y-2 border-b border-border-subtle/22 px-3 py-2.5">
                 <div className="flex items-center justify-between">
                   <p className="text-[0.73rem] font-semibold text-foreground/92">Configuration</p>
                   <span className="text-[0.62rem] text-muted">⋮</span>
@@ -334,13 +330,13 @@ export default function TriptychProduct() {
                 </div>
               </header>
 
-              <div className="border-b border-[var(--color-border-subtle)]/22 px-3 py-2">
+              <div className="border-b border-border-subtle/22 px-3 py-2">
                 <div className="flex flex-wrap gap-1.5">
                   {["Attach resume", "Edit hiring brief"].map((action) => (
                     <button
                       key={action}
                       type="button"
-                      className="rounded-md border border-[var(--color-border-subtle)]/34 px-2 py-0.5 text-[0.62rem] font-medium text-secondary"
+                      className="rounded-md border border-border-subtle/34 px-2 py-0.5 text-[0.62rem] font-medium text-secondary"
                     >
                       {action}
                     </button>
@@ -349,7 +345,7 @@ export default function TriptychProduct() {
               </div>
 
               <div className="flex min-h-0 flex-1 flex-col gap-3 px-3 py-3">
-                <div className="flex min-h-0 flex-1 flex-col rounded-md border border-[var(--color-border-subtle)]/28 bg-[var(--color-page-bg)]/34 p-2.5">
+                <div className="flex min-h-0 flex-1 flex-col rounded-md border border-border-subtle/28 bg-background/34 p-2.5">
                   <p className="text-[0.65rem] text-muted">Default Prompt</p>
                   <div className="mt-1 min-h-0 flex-1 overflow-y-auto overflow-x-hidden">
                     <p className="break-words text-[0.74rem] leading-5 text-secondary">{activeStep.prompt}</p>
@@ -368,7 +364,7 @@ export default function TriptychProduct() {
                           ? "This step is already saved to the preview"
                           : undefined
                     }
-                    className="rounded-md border border-[var(--color-accent-secondary)]/36 bg-[var(--color-surface-alt)]/62 px-2.5 py-1 text-[0.66rem] font-medium text-foreground disabled:cursor-not-allowed disabled:opacity-45"
+                    className="rounded-md border border-accent-secondary/36 bg-surface-alt/62 px-2.5 py-1 text-[0.66rem] font-medium text-foreground disabled:cursor-not-allowed disabled:opacity-45"
                   >
                     {isRunning ? "Running…" : "Run"}
                   </button>
@@ -396,8 +392,8 @@ export default function TriptychProduct() {
                       disabled={activeStep.status !== "generated"}
                       className={`rounded-md border px-2 py-0.5 text-[0.64rem] transition-[color,opacity,border-color] duration-200 disabled:cursor-not-allowed disabled:opacity-40 ${
                         savedAckForStepId === activeStepId && activeStep.status === "saved"
-                          ? "border-[var(--color-accent-secondary)]/32 text-foreground/90"
-                          : "border-[var(--color-border-subtle)]/30 text-secondary"
+                          ? "border-accent-secondary/32 text-foreground/90"
+                          : "border-border-subtle/30 text-secondary"
                       }`}
                     >
                       {saveButtonLabel}
@@ -405,12 +401,12 @@ export default function TriptychProduct() {
                   </div>
                 </div>
 
-                <div className="mt-auto flex items-center justify-between border-t border-[var(--color-border-subtle)]/18 pt-2.5">
+                <div className="mt-auto flex items-center justify-between border-t border-border-subtle/18 pt-2.5">
                   <button
                     type="button"
                     onClick={handlePrevious}
                     disabled={activeIndex <= 0}
-                    className="rounded-md border border-[var(--color-border-subtle)]/30 px-2 py-0.5 text-[0.64rem] text-secondary disabled:cursor-not-allowed disabled:opacity-40"
+                    className="rounded-md border border-border-subtle/30 px-2 py-0.5 text-[0.64rem] text-secondary disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     Previous
                   </button>
@@ -423,7 +419,7 @@ export default function TriptychProduct() {
                         ? "Save this step to continue"
                         : undefined
                     }
-                    className="rounded-md border border-[var(--color-border-subtle)]/30 px-2 py-0.5 text-[0.64rem] text-secondary transition-opacity duration-200 disabled:cursor-not-allowed disabled:opacity-40"
+                    className="rounded-md border border-border-subtle/30 px-2 py-0.5 text-[0.64rem] text-secondary transition-opacity duration-200 disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     Next
                   </button>
@@ -433,10 +429,10 @@ export default function TriptychProduct() {
           )}
         </section>
 
-        <div aria-hidden="true" className="hidden w-px bg-[var(--color-border-subtle)]/34 md:block" />
+        <div aria-hidden="true" className="hidden w-px bg-border-subtle/34 md:block" />
 
         <section
-          className={`relative overflow-hidden rounded-xl border border-[var(--color-border-subtle)]/32 bg-[var(--color-surface-alt)]/50 ${
+          className={`relative overflow-hidden rounded-xl border border-border-subtle/32 bg-surface-alt/50 ${
             !workflowStarted ? "pointer-events-none" : ""
           }`}
         >
@@ -445,12 +441,12 @@ export default function TriptychProduct() {
               !workflowStarted ? "blur-[3px] opacity-[0.38] saturate-[0.75] contrast-[0.92]" : ""
             }
           >
-            <header className="border-b border-[var(--color-border-subtle)]/22 px-3 py-2">
+            <header className="border-b border-border-subtle/22 px-3 py-2">
               <div className="flex items-center justify-between gap-3">
                 <h3 className="min-w-0 truncate text-[0.73rem] font-semibold text-foreground/92">Doc Preview</h3>
                 <button
                   type="button"
-                  className="shrink-0 rounded-md border border-[var(--color-border-subtle)]/34 px-2 py-0.5 text-[0.62rem] font-medium text-secondary"
+                  className="shrink-0 rounded-md border border-border-subtle/34 px-2 py-0.5 text-[0.62rem] font-medium text-secondary"
                 >
                   Export
                 </button>
@@ -459,9 +455,9 @@ export default function TriptychProduct() {
                 className="mt-2 w-full"
                 title={`${committedCount} of ${commitTotal} steps committed to preview`}
               >
-                <div className="h-1.5 w-full overflow-hidden rounded-full bg-[var(--color-border-subtle)]/22">
+                <div className="h-1.5 w-full overflow-hidden rounded-full bg-border-subtle/22">
                   <div
-                    className="h-full rounded-full bg-[var(--color-accent-secondary)]/45 transition-[width] duration-300"
+                    className="h-full rounded-full bg-accent-secondary/45 transition-[width] duration-300"
                     style={{ width: `${commitProgress}%` }}
                   />
                 </div>
@@ -495,10 +491,10 @@ export default function TriptychProduct() {
 
               const reviewCompleteSurface = isReviewFinalize && allWorkflowStepsSaved;
               const docSurfaceBase = reviewCompleteSurface
-                ? "border border-[var(--color-border-subtle)]/28 bg-[var(--color-page-bg)]/34"
+                ? "border border-border-subtle/28 bg-background/34"
                 : isSaved
-                  ? "border border-[var(--color-border-subtle)]/28 bg-[var(--color-page-bg)]/34"
-                  : "border border-dashed border-[var(--color-border-subtle)]/24 bg-[var(--color-page-bg)]/16";
+                  ? "border border-border-subtle/28 bg-background/34"
+                  : "border border-dashed border-border-subtle/24 bg-background/16";
 
               const previewCardClass = [
                 "rounded-md px-2 py-1.5 transition-[border-color,background-color] duration-200",
@@ -526,7 +522,7 @@ export default function TriptychProduct() {
                 <div key={section.id} className={previewCardClass}>
                   <div className="flex items-start justify-between gap-2">
                     <p className={titleClass}>{section.title}</p>
-                    <span className="shrink-0 border-b border-[var(--color-border-subtle)]/35 pb-px text-[0.58rem] uppercase tracking-[0.08em] text-muted">
+                    <span className="shrink-0 border-b border-border-subtle/35 pb-px text-[0.58rem] uppercase tracking-[0.08em] text-muted">
                       {tag}
                     </span>
                   </div>

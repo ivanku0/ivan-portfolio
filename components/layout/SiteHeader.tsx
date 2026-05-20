@@ -21,7 +21,7 @@ const NAV_ITEMS: NavItem[] = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 bg-[rgb(var(--color-page-bg-rgb)_/_0.48)] backdrop-blur-md supports-[backdrop-filter]:bg-[rgb(var(--color-page-bg-rgb)_/_0.2)]">
+    <header className="sticky top-0 z-50 bg-background/48 backdrop-blur-md supports-[backdrop-filter]:bg-background/20">
       <div className="layout-width mx-auto flex w-full items-center justify-between gap-4 px-6 py-4 md:py-5">
         <Link
           href="/"

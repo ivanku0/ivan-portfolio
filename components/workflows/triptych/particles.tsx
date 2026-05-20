@@ -116,7 +116,7 @@ export function CompletionParticleBurst({
           key={`${burstId}-${i}`}
           className={
             p.tint === "accent"
-              ? "absolute rounded-[1px] bg-accent-secondary shadow-[0_0_0_1px_rgba(var(--color-accent-secondary-rgb),0.2)]"
+              ? "absolute rounded-[1px] bg-accent-secondary ring-1 ring-accent-secondary/20"
               : "absolute rounded-[1px] bg-muted"
           }
           style={
