@@ -34,8 +34,10 @@ Add new case studies as additional `#` sections in the same file—do not split 
 
 ## Sync status
 
+**Content pass paused** — see `docs/refactor-status.md` → *Content strategy (revisit later)*.
+
 | Study | Context in master doc | `*.ts` synced |
 |-------|------------------------|---------------|
-| workflows | Yes | Yes |
-| outputs | Add section when ready | Draft (not yet from master doc) |
-| reconstruction | Yes | Yes |
+| workflows | Yes | Yes (approved) |
+| outputs | Not yet | Draft — do not edit unless content strategy reopened |
+| reconstruction | Yes | Yes — verify against Ivan’s notes when content reopens |
