@@ -1,12 +1,12 @@
 # Refactor status
 
-Living log for the portfolio v2 refactor. Case study copy is edited in `content/case-studies/*.ts`; source notes live in `content/case-studies/Portfolio.context/`.
+Living log for the portfolio v2 refactor. Case study copy is edited in `content/case-studies/*.ts`; **all** author notes live in one file: `content/case-studies/Portfolio.context/portfolio-case-studies.md` (sections per study/visual).
 
 ## Checkpoint — 2026-05-19
 
 **Milestone:** Editorial pass started using author-provided context, not agent-invented copy.
 
-- Ivan added `content/case-studies/Portfolio.context/# AI Workflows  Triptych Redesign.md` with product context, role/constraints, before/after, and hiring-manager intent (including notes for the challenge visual and resume-analysis prototype).
+- Ivan added `Portfolio.context/portfolio-case-studies.md` — single document for all studies; workflows sections (main story + challenge visual + prototype) drove `workflows.ts`.
 - `content/case-studies/workflows.ts` was rewritten from that file.
 - **Paused:** Further case study copy (outputs, reconstruction) until structural work is in better shape.
 - **Not yet committed:** Workflows copy update and `Portfolio.context/` (local only as of this note).
@@ -34,6 +34,6 @@ Living log for the portfolio v2 refactor. Case study copy is edited in `content/
 ### Content
 
 - [x] Workflows copy from `Portfolio.context` — approved in browser
-- [x] Outputs copy + dedicated `OutputsVisual` diagrams (draft; add context file to refine)
-- [ ] Add context markdown for **reconstruction**
-- [ ] Rewrite `reconstruction.ts` from author context
+- [x] Outputs copy + `OutputsVisual` diagrams (agent draft — **re-sync from master doc** when outputs section is added)
+- [ ] Add `# Structured AI Outputs` (and reconstruction) sections to `portfolio-case-studies.md` if not already there
+- [ ] Rewrite `outputs.ts` / `reconstruction.ts` from those sections
