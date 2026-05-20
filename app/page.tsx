@@ -1,8 +1,5 @@
-import { CaseStudyCard } from "@/components/home/CaseStudyCard";
-import { HeroAtmosphere } from "@/components/home/HeroAtmosphere";
-import { RevealOnScroll } from "@/components/home/RevealOnScroll";
-import { SectionHeading } from "@/components/home/SectionHeading";
-import { SiteFooter } from "@/components/layout/SiteFooter";
+import { CaseStudyCard, HeroAtmosphere, RevealOnScroll, SectionHeading } from "@/components/home";
+import { SiteFooter } from "@/components/layout";
 import { getCaseStudyCards } from "@/content";
 
 export default function Home() {

@@ -1,7 +1,9 @@
-import OriginalWorkflowModel from "@/components/workflows/OriginalWorkflowModel";
-import TriptychProduct from "@/components/workflows/triptych/TriptychProduct";
-import TriptychVisual from "@/components/workflows/TriptychVisual";
-import WorkflowChallenge from "@/components/workflows/WorkflowChallenge";
+import {
+  OriginalWorkflowModel,
+  TriptychProduct,
+  TriptychVisual,
+  WorkflowChallenge,
+} from "@/components/workflows";
 import type { CaseStudyVisualSlot } from "@/lib/case-study-visuals/types";
 
 export type WorkflowsVisualKey =

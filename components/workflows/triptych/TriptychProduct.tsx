@@ -179,7 +179,7 @@ export default function TriptychProduct() {
   ];
 
   return (
-    <section className="mx-auto w-full max-w-[108ch] rounded-2xl border border-border-subtle/34 bg-background/42 p-4 md:p-5">
+    <section className="mx-auto w-full max-w-full rounded-2xl border border-border-subtle/34 bg-background/42 p-3 sm:p-4 md:max-w-[108ch] md:p-5">
       <div className="grid grid-cols-1 gap-3 md:min-h-[38rem] md:grid-cols-[0.9fr_auto_2.45fr_auto_1.3fr] md:gap-4">
         <aside
           className={`relative overflow-hidden rounded-xl border border-border-subtle/30 bg-surface-raised/44 ${

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CaseStudyTemplate } from "@/components/case-study/CaseStudyTemplate";
+import { CaseStudyTemplate } from "@/components/case-study";
 import { caseStudies, getCaseStudyBySlug } from "@/content";
 import type { CaseStudySlug } from "@/content/types";
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!study) return { title: "Case study not found" };
 
   return {
-    title: `${study.page.title} | Ivan Kuo`,
+    title: study.page.title,
     description: study.page.metaDescription,
   };
 }

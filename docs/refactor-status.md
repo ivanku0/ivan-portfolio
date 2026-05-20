@@ -38,7 +38,6 @@ See also: [`Portfolio.context/README.md`](../content/case-studies/Portfolio.cont
 2. Review **outputs** and **reconstruction** in browser; edit master doc first, then `*.ts`.
 3. Optional: refine **home** hero / “How I Think” in same voice pass as case studies.
 4. Replace mock diagrams with **real assets** when available (registry-only change).
-5. Fix duplicate page title pattern (`… | Ivan Kuo | Ivan Kuo`) in metadata template.
 
 ### Checkpoints (content)
 
@@ -62,8 +61,10 @@ See also: [`Portfolio.context/README.md`](../content/case-studies/Portfolio.cont
 - [x] Visual registry split: `lib/case-study-visuals/{workflows,outputs,reconstruction}.tsx`
 - [x] Barrel exports: `components/{layout,home,case-study,workflows}/index.ts`
 - [ ] Real screenshot/Figma assets for outputs visuals (optional, structural swap in registry)
-- [ ] Metadata title template dedupe (`| Ivan Kuo` twice)
-- [ ] Any further Triptych polish / mobile QA (non-copy)
+- [x] Metadata title template dedupe — case study pages use `title: study.page.title` only (root `template: "%s | Ivan Kuo"`)
+- [x] Root `app/not-found.tsx`
+- [x] Barrel imports in `app/layout.tsx`, `app/page.tsx`, `app/work/[slug]/page.tsx`, `CaseStudyTemplate`, `workflows` visual registry
+- [x] Triptych mobile layout — full-width section on small screens, `overflow-x-auto` on visual blocks in case study template
 
 ---
 

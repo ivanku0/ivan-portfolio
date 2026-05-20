@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { RevealOnScroll } from "@/components/home/RevealOnScroll";
+import { RevealOnScroll } from "@/components/home";
 import {
   getNextCaseStudy,
   portfolioContactEmail,
@@ -176,7 +176,7 @@ export function CaseStudyTemplate({
                 </div>
               </section>
 
-              <div className="pt-2 md:pt-3">
+              <div className="min-w-0 overflow-x-auto pt-2 md:pt-3">
                 {renderVisualBlock(section.visual, section.variant)}
               </div>
             </div>
