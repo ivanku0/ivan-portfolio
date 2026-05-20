@@ -211,3 +211,33 @@ This project demonstrates:
 - Reducing concept-to-review friction in cross-functional teams
 - Practical methods for deconstructing live UIs into iteration-ready libraries
 
+---
+
+# Desk swarm (math is for blockers)
+
+## Product / Context
+
+Personal fan-built web app for Commander players tracking exponential token boards (Scute Swarm, Homunculus Horde, Krenko-style hordes). Repo: `math-is-for-blockers`. Product name on screen: **desk swarm**. Tagline: *math is for blockers. track tokens quickly.*
+
+Mobile-first, PWA-style install, offline-friendly shell. Not a rules engine: a fast counter with preset-specific grow/undo/wipe behavior and a readable canvas “swarm” field.
+
+## Your Role
+
+Designed and built end to end: interaction model, visual language, preset rules, canvas layout/zoom, menu carousel, info sheet (Scryfall oracle + rulings), share image export. React 19 + TypeScript + Vite; Vitest for counter/layout math.
+
+## One Before / After Moment
+
+### Before
+
+Dice, mental math, or spreadsheets at the table when counts double every landfall. Slow, error-prone, breaks flow.
+
+### After
+
+One hero number, swarm you can read at a glance, controls mapped to how each preset actually plays (grow, undo, wipe, manual entry at Commander scale via BigInt).
+
+## What You Want a Hiring Manager to Remember
+
+Same systems thinking as enterprise work, applied to a zero-stake domain where clarity and speed at the table are the whole brief. Shows end-to-end product craft, not only client-facing AI platforms.
+
+**Note:** Draft synced to `content/case-studies/desk-swarm.ts` (2026-05). Replace with Ivan’s voice when revisiting content. Visuals: real screenshots per `docs/visual-assets.md` (mocks until captures land in `public/work/desk-swarm/`).
+

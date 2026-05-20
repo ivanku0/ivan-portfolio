@@ -1,4 +1,4 @@
-export type CaseStudySlug = "workflows" | "outputs" | "reconstruction";
+export type CaseStudySlug = "workflows" | "outputs" | "reconstruction" | "desk-swarm";
 
 export type CaseStudySplashVariant = CaseStudySlug;
 
@@ -14,7 +14,11 @@ export type VisualKey =
   | "reconstruction-overview"
   | "reconstruction-challenge"
   | "reconstruction-approach"
-  | "reconstruction-outcome";
+  | "reconstruction-outcome"
+  | "desk-swarm-overview"
+  | "desk-swarm-challenge"
+  | "desk-swarm-approach"
+  | "desk-swarm-outcome";
 
 export type CaseStudyContent = {
   slug: CaseStudySlug;

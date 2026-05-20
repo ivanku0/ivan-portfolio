@@ -62,7 +62,7 @@ export function CaseStudySplash({ variant }: CaseStudySplashProps) {
             </div>
           </div>
         </div>
-      ) : (
+      ) : variant === "reconstruction" ? (
         <div className="grid h-24 grid-cols-[1fr_auto_1fr] items-center gap-2">
           <div className="rounded border border-border-subtle/22 bg-background/16 p-2">
             <div className="grid grid-cols-4 gap-1">
@@ -90,6 +90,21 @@ export function CaseStudySplash({ variant }: CaseStudySplashProps) {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      ) : (
+        <div className="relative h-24 overflow-hidden rounded-lg bg-background/12 p-3">
+          <p className="text-[9px] font-medium uppercase tracking-[0.18em] text-muted">desk swarm</p>
+          <p className="mt-1 text-lg font-semibold tabular-nums text-accent-secondary/88">64</p>
+          <div className="absolute bottom-2 left-2 right-2 grid grid-cols-10 gap-0.5 opacity-90">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <span
+                key={i}
+                className={`aspect-square rounded-[1px] ${
+                  i % 6 === 0 ? "bg-accent-secondary/55" : "bg-border-subtle/30"
+                }`}
+              />
+            ))}
           </div>
         </div>
       )}

@@ -22,8 +22,9 @@ Use top-level `#` headings to separate pieces. Each block follows the same templ
 | Resume Analysis Workflow Prototype | Workflows — outcome visual (TriptychProduct) |
 | *(add)* Structured AI Outputs | `outputs.ts` |
 | From Screenshots to System | `reconstruction.ts` |
+| Desk swarm (math is for blockers) | `desk-swarm.ts` |
 
-Add new case studies as additional `#` sections in the same file—do not split into per-slug files unless the doc becomes hard to maintain.
+Add new case studies as additional `#` sections in the same file. Do not split into per-slug files unless the doc becomes hard to maintain.
 
 ## Workflow
 
@@ -31,6 +32,7 @@ Add new case studies as additional `#` sections in the same file—do not split 
 2. Rewrite the matching `content/case-studies/<slug>.ts`
 3. Preview at `/work/<slug>`
 4. Note progress in `docs/refactor-status.md`
+5. Add screenshots or embeds per `docs/visual-assets.md` (registry swap, not copy edits)
 
 ## Sync status
 
@@ -41,3 +43,4 @@ Add new case studies as additional `#` sections in the same file—do not split 
 | workflows | Yes | Yes (approved) |
 | outputs | Not yet | Draft — do not edit unless content strategy reopened |
 | reconstruction | Yes | Yes — verify against Ivan’s notes when content reopens |
+| desk-swarm | Yes (draft) | Draft — lighten copy; add screenshots per `docs/visual-assets.md` |

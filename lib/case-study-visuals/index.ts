@@ -1,4 +1,8 @@
 import type { VisualKey } from "@/content/types";
+import {
+  isDeskSwarmVisualKey,
+  resolveDeskSwarmVisual,
+} from "@/lib/case-study-visuals/desk-swarm";
 import { isOutputsVisualKey, resolveOutputsVisual } from "@/lib/case-study-visuals/outputs";
 import {
   isReconstructionVisualKey,
@@ -31,6 +35,10 @@ export function resolveVisual(
 
   if (isReconstructionVisualKey(key)) {
     return resolveReconstructionVisual(key, labels);
+  }
+
+  if (isDeskSwarmVisualKey(key)) {
+    return resolveDeskSwarmVisual(key, labels);
   }
 
   return resolveReconstructionVisual("reconstruction-overview", labels);

@@ -40,7 +40,7 @@ export default function Home() {
               <SectionHeading
                 id="selected-work-heading"
                 title="Selected Work"
-                description="Three projects on making AI systems predictable, structured, and grounded in real product constraints."
+                description="Enterprise AI workflow work plus a personal product—systems thinking from flagship platforms to a niche table tool."
               />
 
               <div className="grid gap-5 md:grid-cols-2 md:gap-6">

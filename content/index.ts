@@ -1,3 +1,4 @@
+import { deskSwarmCaseStudy } from "@/content/case-studies/desk-swarm";
 import { outputsCaseStudy } from "@/content/case-studies/outputs";
 import { reconstructionCaseStudy } from "@/content/case-studies/reconstruction";
 import { workflowsCaseStudy } from "@/content/case-studies/workflows";
@@ -9,6 +10,7 @@ export const caseStudies: CaseStudyContent[] = [
   workflowsCaseStudy,
   outputsCaseStudy,
   reconstructionCaseStudy,
+  deskSwarmCaseStudy,
 ];
 
 export function getCaseStudyBySlug(slug: string): CaseStudyContent | undefined {
